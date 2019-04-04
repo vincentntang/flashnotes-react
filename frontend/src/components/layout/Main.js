@@ -9,9 +9,11 @@ export default class Main extends Component {
     return (
       <div>
         <Header />
+        {this.state.cards.map(card => {
+          return <li key={card.id}>{card.content}</li>;
+        })}
         <Footer />
       </div>
     );
   }
 }
-
