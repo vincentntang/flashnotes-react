@@ -1,1 +1,0 @@
-# flashnotes-react-firebase
