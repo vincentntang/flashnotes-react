@@ -1,23 +1,14 @@
 import React from "react";
 
 const Card = props => {
+  console.log(props);
   return (
-    <header className="top">
-      <h1>
-        Catch
-        <span className="ofThe">
-          <span className="of">Of</span>
-          <span className="the">The</span>
-        </span>
-      </h1>
-      <h3 className="tagline">
-        <span>
-          {props.tagline}
-          {props.age}
-        </span>
-      </h3>
-    </header>
+    <div>
+      <p>{props.card.question}</p>
+      <p>{props.card.answer}</p>
+    </div>
   );
 };
 
 export default Card;
+ß;
