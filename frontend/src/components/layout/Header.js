@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const HeaderWrapper = styled.header`
+const HeaderStyles = styled.header`
   background-color: ${props => props.theme.grey}
   text-align: center;
   padding: 30px;
@@ -9,9 +9,9 @@ const HeaderWrapper = styled.header`
 
 const Header = props => {
   return (
-    <HeaderWrapper className="top">
+    <HeaderStyles className="top">
       <h1>Flash Notes</h1>
-    </HeaderWrapper>
+    </HeaderStyles>
   );
 };
 

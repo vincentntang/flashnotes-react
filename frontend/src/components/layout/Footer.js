@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { withTheme } from "styled-components";
 
-const FooterWrapper = styled.footer`
+const FooterStyles = styled.footer`
   background-color: ${props => props.theme.grey}
   text-align: center;
   padding: 50px;
@@ -9,9 +9,9 @@ const FooterWrapper = styled.footer`
 
 const Footer = props => {
   return (
-    <FooterWrapper>
+    <FooterStyles>
       <div>Flash Notes by Vincent Tang</div>
-    </FooterWrapper>
+    </FooterStyles>
   );
 };
 
