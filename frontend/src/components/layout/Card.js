@@ -1,11 +1,23 @@
-import React, {
-  Component
-} from "../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react";
+import React from "react";
 
-class Card extends Component {
-  render() {
-    return <div />;
-  }
-}
+const Card = props => {
+  return (
+    <header className="top">
+      <h1>
+        Catch
+        <span className="ofThe">
+          <span className="of">Of</span>
+          <span className="the">The</span>
+        </span>
+      </h1>
+      <h3 className="tagline">
+        <span>
+          {props.tagline}
+          {props.age}
+        </span>
+      </h3>
+    </header>
+  );
+};
 
 export default Card;

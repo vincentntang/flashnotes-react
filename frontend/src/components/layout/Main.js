@@ -25,11 +25,12 @@ export default class Main extends Component {
     // Current state of toggle
     let toggled = false;
     let cardContent;
+    const { cards } = this.state;
 
-    if (this.state.cards.length === 0) {
+    if (cards.length === 0) {
       cardContent = <Spinner />;
     } else {
-      cardContent = <Cards />;
+      cardContent = <Cards cards={cards} />;
     }
     return (
       <div>
