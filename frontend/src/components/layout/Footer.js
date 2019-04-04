@@ -1,9 +1,18 @@
 import React from "react";
+import styled, { withTheme } from "styled-components";
 
-export default () => {
+const FooterWrapper = styled.footer`
+  background-color: ${props => props.theme.grey}
+  text-align: center;
+  padding: 50px;
+`;
+
+const Footer = props => {
   return (
-    <footer>
-      <div>I'm a footer</div>
-    </footer>
+    <FooterWrapper>
+      <div>Flash Notes by Vincent Tang</div>
+    </FooterWrapper>
   );
 };
+
+export default withTheme(Footer);
