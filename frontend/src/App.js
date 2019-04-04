@@ -1,13 +1,35 @@
 import React, { Component } from "react";
-import Main from './components/layout/Main';
+import Main from "./components/layout/Main";
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+
+// SCSS Variables declaration
+const theme = {
+  red: "#FF0000",
+  black: "#393939",
+  grey: "#3A3A3A",
+  lightgrey: "#E1E1E1",
+  offWhite: "#EDEDED",
+  maxWidth: "1000px",
+  bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)"
+};
+const GlobalStyle = createGlobalStyle`
+  body {
+    color: ${props => (props.whiteColor ? "white" : "black")};
+  }
+`;
+
+// ThemeProvider is not considered a div element
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        Hello World
-        <Main/>
-      </div>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <GlobalStyle />
+          Hello World
+          <Main />
+        </div>
+      </ThemeProvider>
     );
   }
 }

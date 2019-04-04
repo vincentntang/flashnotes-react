@@ -6,11 +6,13 @@ import MainData from "../data/MainData";
 export default class Main extends Component {
   state = MainData;
   render() {
+    // Current state of toggle
+    let toggled = false;
     return (
       <div>
         <Header />
         {this.state.cards.map(card => {
-          return <li key={card.id}>{card.content}</li>;
+          return <div key={card.id}>{card.question}</div>;
         })}
         <Footer />
       </div>
