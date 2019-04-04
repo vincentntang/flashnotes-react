@@ -13,7 +13,9 @@ const MainStyles = styled.div`
 
 export default class Main extends Component {
   componentDidMount() {
-    this.setState({ cards: MainData.cards });
+    setTimeout(() => {
+      this.setState({ cards: MainData.cards });
+    }, 4000);
   }
 
   state = {
@@ -24,7 +26,7 @@ export default class Main extends Component {
     let toggled = false;
     let cardContent;
 
-    if (this.state.cards === null) {
+    if (this.state.cards.length === 0) {
       cardContent = <Spinner />;
     } else {
       cardContent = <Cards />;
@@ -33,10 +35,11 @@ export default class Main extends Component {
       <div>
         <Header />
         <MainStyles>
+          {/* <Spinner /> */}
           {cardContent}
-          {this.state.cards.map(card => {
+          {/* {this.state.cards.map(card => {
             return <div key={card.id}>{card.question}</div>;
-          })}
+          })} */}
         </MainStyles>
         <Footer />
       </div>
