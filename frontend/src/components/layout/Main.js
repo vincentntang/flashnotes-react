@@ -10,7 +10,13 @@ const MainStyles = styled.div`
 `;
 
 export default class Main extends Component {
-  state = MainData;
+  componentDidMount() {
+    this.setState({ cards: MainData.cards });
+  }
+
+  state = {
+    cards: [] //must be defined as render func runs right away
+  };
   render() {
     // Current state of toggle
     let toggled = false;
