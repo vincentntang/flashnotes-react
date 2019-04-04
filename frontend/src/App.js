@@ -6,7 +6,7 @@ import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 const theme = {
   red: "#FF0000",
   black: "#393939",
-  grey: "#3A3A3A",
+  grey: "lightgray",
   lightgrey: "#E1E1E1",
   offWhite: "#EDEDED",
   maxWidth: "1000px",
@@ -26,7 +26,6 @@ class App extends Component {
       <ThemeProvider theme={theme}>
         <div className="App">
           <GlobalStyle />
-          Hello World
           <Main />
         </div>
       </ThemeProvider>
