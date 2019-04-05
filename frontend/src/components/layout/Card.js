@@ -8,7 +8,7 @@ const CardStyles = styled.div`
   flex: 1;
   background-color: ${props => props.theme.offWhite};
   p {
-    button
+    color: ${props => (props.toggled ? "red" : "green")};
   }
 `;
 
@@ -29,7 +29,7 @@ class Card extends Component {
   render() {
     const cardContent = "";
     return (
-      <CardStyles>
+      <CardStyles toggled={this.state.toggled}>
         {this.state.toggled ? (
           <p>{this.props.card.answer}</p>
         ) : (
