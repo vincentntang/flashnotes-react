@@ -23,6 +23,15 @@ User Stories
   * /  -> I can browse cards and add to my collection.
 
 * Signed in
-  * /Dashboard - Default, I see analytics, decks to refresh, etc
+  * /Stats - I see analytics, decks to refresh, etc
+    * I can see what I typed in one day, 7 days, and last 30 days (by card type)
+    * I can see a commit graph of sorts
   * /Decks - I can see my deck
-  * /Add - I can add a card quickly
+    * I can add a card quickly here.
+    * I can review my cards quickly
+    * I can search records of my cards quickly
+    * I can get card recommendation from others.
+    * I can set my preferences, to indicate what cards I want to see
+    * I can see what others tag with the same cards
+  * /Notes - I can see my notes
+    * Leftside shows a folder pane
