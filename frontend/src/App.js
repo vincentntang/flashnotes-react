@@ -3,11 +3,11 @@ import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Import Components
-import Landing from "./components/Landing";
+import Landing from "./components/layout/Landing";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import Login from "./components/Login";
-import Register from "./components/Register";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
 
 // SCSS Variables declaration
 const theme = {
