@@ -1,0 +1,38 @@
+// 320px, 576px, 768px, 992px, 1200px, 1440px
+// For Mobile-First Design
+@mixin screen-min($min) { 
+  @media (min-width: $min) { 
+    @content 
+  } 
+};
+
+// For Desktop-First Design
+@mixin screen-max($max) { 
+  @media (max-width: $max - 1) { 
+    @content 
+  } 
+};
+
+/***** GLOBAL STYLES *****/
+// Container
+.container {
+  width: 100%;
+  margin: 0 auto;
+  @include screen-min(320px){max-width: 320px;}
+  @include screen-min(576px){max-width: 540px;}
+  @include screen-min(768px){max-width: 720px;}
+  @include screen-min(992px){max-width: 960px;}
+  @include screen-min(1200px){max-width: 1140px;}
+}
+
+a {
+  &:focus,
+  &:active,
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+
+
