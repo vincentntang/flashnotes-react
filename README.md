@@ -4,7 +4,8 @@
  * [x] Styled components to easily modified scss
  * [x] Spinner gif placeholder
  * [x] Toggle logic for front/back card
- * [ ] Conditionally render classes
+ * [x] Conditionally render classes
+* [ ] CRUD cards
 
 Things learned along the way
 
