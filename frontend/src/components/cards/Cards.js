@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Card from "../card/Card";
+import CardItem from "./CardItem";
 import MainData from "../data/MainData";
 import Spinner from "../common/Spinner";
 
@@ -30,7 +30,7 @@ export default class Cards extends Component {
       cardContent = <Spinner />;
     } else {
       cardContent = this.state.cards.map(card => (
-        <Card key={card.id} card={card} />
+        <CardItem key={card.id} card={card} />
       ));
     }
     return <CardsStyles>{cardContent}</CardsStyles>;
