@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // Import Components
 import Main from "./components/layout/Main";
 import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
 
 // SCSS Variables declaration
 const theme = {
@@ -29,8 +30,11 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navbar />
-            <GlobalStyle />
-            <Main />
+            <div className="container">
+              <GlobalStyle />
+              <Main />
+            </div>
+            <Footer />
           </div>
         </Router>
       </ThemeProvider>
