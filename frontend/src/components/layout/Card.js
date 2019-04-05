@@ -27,9 +27,11 @@ class Card extends Component {
     const cardContent = "";
     return (
       <CardStyles>
-        {this.state.toggled && <p>Hello World</p>}
-        <p>{this.props.card.question}</p>
-        <p>{this.props.card.answer}</p>
+        {this.state.toggled ? (
+          <p>{this.props.card.answer}</p>
+        ) : (
+          <p>{this.props.card.question}</p>
+        )}
         <button onClick={this.onClick}>Toggle Card</button>
       </CardStyles>
     );
