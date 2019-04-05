@@ -14,3 +14,4 @@ Things learned along the way
 * Styled components library add on
 * Card component -> ES6 vs ES5 / constructor functions in backend
 * Conditionally rendering components and styled-components method
+* Figuring out media queries and sass-styles https://jsramblings.com/2018/02/04/styled-components-media-queries.html

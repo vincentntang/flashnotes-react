@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+// Global Styles
+import "./styles/reset.css";
+
 // Import Components
 import Main from "./components/layout/Main";
 import Navbar from "./components/layout/Navbar";
@@ -22,10 +25,6 @@ const theme = {
 const GlobalStyle = createGlobalStyle`
   body {
     color: ${props => (props.whiteColor ? "white" : "black")};
-  }
-  .container {
-    background-color: lightgrey;
-    width: 100%;
   }
 `;
 // ThemeProvider is not considered a div element

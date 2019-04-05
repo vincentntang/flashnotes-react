@@ -11,8 +11,18 @@ const NavbarStyles = styled.nav`
 export default class Navbar extends Component {
   render() {
     return (
-      <NavbarStyles className="top">
-        <h1>Flash Notes</h1>
+      <NavbarStyles className="container">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/Register">Register</Link>
+          </li>
+          <li>
+            <Link to="/Login">Login</Link>
+          </li>
+        </ul>
       </NavbarStyles>
     );
   }
