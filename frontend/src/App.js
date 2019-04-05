@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./components/layout/Main";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
 
 // SCSS Variables declaration
 const theme = {
@@ -21,6 +23,10 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: ${props => (props.whiteColor ? "white" : "black")};
   }
+  .container {
+    background-color: lightgrey;
+    width: 100%;
+  }
 `;
 // ThemeProvider is not considered a div element
 class App extends Component {
@@ -29,10 +35,12 @@ class App extends Component {
       <ThemeProvider theme={theme}>
         <Router>
           <div className="App">
+            <GlobalStyle />
             <Navbar />
+            <Route exact path="/" component={Main} />
             <div className="container">
-              <GlobalStyle />
-              <Main />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
             </div>
             <Footer />
           </div>
