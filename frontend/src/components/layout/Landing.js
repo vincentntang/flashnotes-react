@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import MainData from "./data/MainData";
+import MainData from "../data/MainData";
 import styled from "styled-components";
-import Spinner from "./common/Spinner";
-import Cards from "./cards/Cards";
+import Spinner from "../common/Spinner";
+import Cards from "../cards/Cards";
 
 const LandingStyles = styled.div`
   background-color: ${props => props.theme.offWhite}
