@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import MainData from "../data/MainData";
 import styled from "styled-components";
 import Spinner from "../common/Spinner";
-import Cards from "./Cards";
+import Cards from "../cards/Cards";
 
 const MainStyles = styled.div`
   background-color: ${props => props.theme.offWhite}

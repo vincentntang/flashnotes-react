@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Card from "./Card";
+import Card from "../card/Card";
 import styled from "styled-components";
 
 const CardsStyles = styled.section`
