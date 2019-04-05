@@ -7,6 +7,9 @@ const CardStyles = styled.div`
   border: 1px solid red;
   flex: 1;
   background-color: ${props => props.theme.offWhite};
+  p {
+    button
+  }
 `;
 
 /**
