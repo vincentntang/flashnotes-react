@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Main from "./components/layout/Main";
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 
 // SCSS Variables declaration
 const theme = {

@@ -22,8 +22,6 @@ export default class Main extends Component {
     cards: [] //must be defined as render func runs right away
   };
   render() {
-    // Current state of toggle
-    let toggled = false;
     let cardContent;
     const { cards } = this.state;
 

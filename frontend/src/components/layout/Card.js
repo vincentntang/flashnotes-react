@@ -27,7 +27,6 @@ class Card extends Component {
     this.setState({ toggled: !this.state.toggled });
   };
   render() {
-    const cardContent = "";
     return (
       <CardStyles toggled={this.state.toggled}>
         {this.state.toggled ? (
