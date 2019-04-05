@@ -33,13 +33,7 @@ export default class Main extends Component {
     return (
       <div>
         <Navbar />
-        <MainStyles>
-          {/* <Spinner /> */}
-          {cardContent}
-          {/* {this.state.cards.map(card => {
-            return <div key={card.id}>{card.question}</div>;
-          })} */}
-        </MainStyles>
+        <MainStyles>{cardContent}</MainStyles>
         <Footer />
       </div>
     );

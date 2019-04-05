@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import Main from "./components/layout/Main";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+// Import Components
+import Main from "./components/layout/Main";
 
 // SCSS Variables declaration
 const theme = {
