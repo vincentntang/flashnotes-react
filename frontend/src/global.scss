@@ -24,3 +24,15 @@
   @include screen-min(992px){max-width: 960px;}
   @include screen-min(1200px){max-width: 1140px;}
 }
+
+a {
+  &:focus,
+  &:active,
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+
+

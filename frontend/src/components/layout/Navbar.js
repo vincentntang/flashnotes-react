@@ -7,7 +7,12 @@ const NavbarStyles = styled.nav`
   width: 100%;
   display: flex;
   padding: 10px;
+  background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  a {
+    color: white;
+  }
   .home {
+    font-weight: bold;
     flex-basis: 120px;
   }
   ul {
