@@ -16,3 +16,13 @@ Things learned along the way
 * Conditionally rendering components and styled-components method
 * Figuring out media queries and sass-styles https://jsramblings.com/2018/02/04/styled-components-media-queries.html
 * Defining routes (top level folder)
+
+User Stories 
+
+* Not signed in
+  * /  -> I can browse cards and add to my collection.
+
+* Signed in
+  * /Dashboard - Default, I see analytics, decks to refresh, etc
+  * /Decks - I can see my deck
+  * /Add - I can add a card quickly
