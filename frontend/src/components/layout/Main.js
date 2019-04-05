@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Footer from "./Footer";
-import Header from "./Header";
+import Navbar from "./Navbar";
 import MainData from "../data/MainData";
 import styled from "styled-components";
 import Spinner from "../common/Spinner";
@@ -32,7 +32,7 @@ export default class Main extends Component {
     }
     return (
       <div>
-        <Header />
+        <Navbar />
         <MainStyles>
           {/* <Spinner /> */}
           {cardContent}

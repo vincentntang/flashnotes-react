@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Main from "./components/layout/Main";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // SCSS Variables declaration
 const theme = {
@@ -17,17 +18,17 @@ const GlobalStyle = createGlobalStyle`
     color: ${props => (props.whiteColor ? "white" : "black")};
   }
 `;
-
 // ThemeProvider is not considered a div element
-
 class App extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <div className="App">
-          <GlobalStyle />
-          <Main />
-        </div>
+        <Router>
+          <div className="App">
+            <GlobalStyle />
+            <Main />
+          </div>
+        </Router>
       </ThemeProvider>
     );
   }
