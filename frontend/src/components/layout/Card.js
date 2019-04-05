@@ -10,7 +10,6 @@ const CardStyles = styled.div`
 `;
 
 const Card = props => {
-  console.log(props);
   return (
     <CardStyles>
       <p>{props.card.question}</p>
