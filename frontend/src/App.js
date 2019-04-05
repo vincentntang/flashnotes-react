@@ -2,15 +2,12 @@ import React, { Component } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-// Global Styles
-import "./styles/reset.css";
-
 // Import Components
-import Main from "./components/layout/Main";
+import Landing from "./components/Landing";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import Login from "./components/auth/Login";
-import Register from "./components/auth/Register";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 // SCSS Variables declaration
 const theme = {
@@ -36,7 +33,7 @@ class App extends Component {
           <div className="App">
             <GlobalStyle />
             <Navbar />
-            <Route exact path="/" component={Main} />
+            <Route exact path="/" component={Landing} />
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />

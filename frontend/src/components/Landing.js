@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import MainData from "../data/MainData";
+import MainData from "./data/MainData";
 import styled from "styled-components";
-import Spinner from "../common/Spinner";
-import Cards from "../cards/Cards";
+import Spinner from "./common/Spinner";
+import Cards from "./cards/Cards";
 
-const MainStyles = styled.div`
+const LandingStyles = styled.div`
   background-color: ${props => props.theme.offWhite}
   text-align: center;
 `;
@@ -30,7 +30,7 @@ export default class Main extends Component {
     }
     return (
       <div>
-        <MainStyles>{cardContent}</MainStyles>
+        <LandingStyles>{cardContent}</LandingStyles>
       </div>
     );
   }
