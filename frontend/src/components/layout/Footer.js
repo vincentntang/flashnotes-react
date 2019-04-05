@@ -9,7 +9,7 @@ const FooterStyles = styled.footer`
 
 const Footer = props => {
   return (
-    <FooterStyles>
+    <FooterStyles className="container">
       <div>Flash Notes by Vincent Tang</div>
     </FooterStyles>
   );

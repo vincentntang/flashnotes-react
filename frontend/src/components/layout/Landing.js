@@ -30,7 +30,7 @@ export default class Main extends Component {
     }
     return (
       <div>
-        <LandingStyles>{cardContent}</LandingStyles>
+        <LandingStyles className="container">{cardContent}</LandingStyles>
       </div>
     );
   }
