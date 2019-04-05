@@ -9,7 +9,7 @@ const LandingStyles = styled.div`
   text-align: center;
 `;
 
-export default class Main extends Component {
+export default class Landing extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ cards: MainData.cards });
