@@ -40,18 +40,16 @@ export default class Cards extends Component {
     if (decks.length === 0) {
       deckContent = <Spinner />;
     } else {
-      deckContent = this.state.cards.map(card => (
-        <CardItem key={card.id} card={card} />
-      ));
+      deckContent = this.state.decks.map(deck => {
+        return (
+          <DeckBody>
+            <Link to={`/decks/${deck.id}`}>{deck.id}</Link>
+            <p>{deck.title}</p>
+          </DeckBody>
+        );
+      });
     }
     console.log(this.state.decks);
-    return (
-      <DeckStyles>
-        {this.state.decks.map(deck => {
-          return <Link to={`/decks/${deck.id}`}>{deck.id}</Link>;
-        })}
-        <DeckBody>{deckContent}</DeckBody>
-      </DeckStyles>
-    );
+    return <DeckStyles>{deckContent}</DeckStyles>;
   }
 }
