@@ -40,7 +40,7 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/decks" component={Decks} />
-              <Route exact path="/decks/:handle" component={Deck} />
+              <Route exact path="/deck/:handle" component={Deck} />
             </div>
             <Footer />
           </div>
