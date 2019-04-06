@@ -14,27 +14,39 @@ const DeckBody = styled.div`
 `;
 
 export default class Deck extends Component {
+  state = {
+    cards: [], //must be defined as render func runs right away
+    decks: [],
+    toggled: false
+  };
   componentDidMount() {
     setTimeout(() => {
       this.setState({ cards: MainData.cards, decks: MainData.decks });
     }, 2000);
   }
-  state = {
-    cards: [], //must be defined as render func runs right away
-    decks: []
+  onReviewCards = () => {
+    this.setState({ toggled: !this.state.toggled });
   };
 
   render() {
+    let deckContent = "";
+    let { toggled } = this.state;
+
+    if (toggled) {
+      deckContent = <div>Hello</div>;
+    } else {
+      deckContent = (
+        <div>
+          <div> {this.props.match.params.handle}</div>
+          <button onClick={this.onReviewCards}>Review Cards</button>
+          <button>Edit Cards</button>
+          <button>Options</button>
+        </div>
+      );
+    }
     return (
       <DeckStyles>
-        <DeckBody>
-          <div>
-            <div> {this.props.match.params.handle}</div>
-            <button>Review Cards</button>
-            <button>Edit Cards</button>
-            <button>Options</button>
-          </div>
-        </DeckBody>
+        <DeckBody>{deckContent}</DeckBody>
       </DeckStyles>
     );
   }
