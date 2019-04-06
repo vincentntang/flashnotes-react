@@ -35,7 +35,11 @@ export default class Deck extends Component {
 
     if (toggled) {
       deckContent = (
-        <Review cards={this.state.cards} decks={this.state.decks}>
+        <Review
+          deckID={this.props.match.params.handle}
+          cards={this.state.cards}
+          decks={this.state.decks}
+        >
           Hello
         </Review>
       );

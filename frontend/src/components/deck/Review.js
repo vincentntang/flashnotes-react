@@ -5,7 +5,15 @@ import React, { Component } from "react";
  * Has card and state
  */
 export default class Review extends Component {
+  componentDidMount() {
+    console.log(this.props);
+  }
   render() {
-    return;
+    const { deckID, cards, decks } = this.props;
+    let currentDeck = decks.filter(obj => obj.id == deckID);
+    console.log(currentDeck, "currentDeck");
+    // let cardQueue = currentDeck.cardIds;
+    // console.log(cardQueue, "currentQueue");
+    return <div>hey</div>;
   }
 }
