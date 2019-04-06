@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import MainData from "../data/MainData";
 import Spinner from "../common/Spinner";
+import Review from "./Review";
 
 const DeckStyles = styled.div`
   display: flex;
@@ -33,7 +34,11 @@ export default class Deck extends Component {
     let { toggled } = this.state;
 
     if (toggled) {
-      deckContent = <div>Hello</div>;
+      deckContent = (
+        <Review cards={this.state.cards} decks={this.state.decks}>
+          Hello
+        </Review>
+      );
     } else {
       deckContent = (
         <div>
