@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import DeckItem from "./DeckItem";
-import CardItem from "./CardItem";
+// import DeckItem from "./DeckItem";
+// import CardItem from "./CardItem";
 import MainData from "../data/MainData";
 import Spinner from "../common/Spinner";
 
