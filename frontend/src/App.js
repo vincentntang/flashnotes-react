@@ -8,6 +8,8 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
+import Decks from "./components/decks/Decks";
+import Deck from "./components/deck/Deck";
 
 // SCSS Variables declaration
 const theme = {
@@ -37,6 +39,8 @@ class App extends Component {
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/decks" component={Decks} />
+              <Route exact path="/deck/:handle" component={Deck} />
             </div>
             <Footer />
           </div>

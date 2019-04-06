@@ -7,6 +7,8 @@
   * [x] Conditionally render classes
 
 * [ ] Add Routing + Create Cards
+  * [x] Add routing
+  * [x] Add Nav Links and styling
   * [ ] Create new cards
 
 Things learned along the way
