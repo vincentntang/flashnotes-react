@@ -1,38 +1,57 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+import DeckItem from "./DeckItem";
 import CardItem from "./CardItem";
 import MainData from "../data/MainData";
 import Spinner from "../common/Spinner";
 
-const CardsStyles = styled.section`
-  background-color: ${props => props.theme.grey};
-  display: flex;
+const DeckStyles = styled.section`
+  background-color: yellow;
+  // background-color: ${props => props.theme.grey};
+  // display: flex;
   // flex-wrap: wrap;
   // align-items: center;
+  // justify-content: center;
+`;
+
+const DeckBody = styled.div`
+  display: flex;
   justify-content: center;
 `;
 
 export default class Cards extends Component {
   componentDidMount() {
     setTimeout(() => {
-      this.setState({ cards: MainData.cards });
+      this.setState({ cards: MainData.cards, decks: MainData.decks });
     }, 2000);
   }
 
   state = {
-    cards: [] //must be defined as render func runs right away
+    cards: [], //must be defined as render func runs right away
+    decks: []
   };
   render() {
-    let cardContent;
-    const { cards } = this.state;
+    let deckContent;
+    // const { cards } = this.state;
+    const { decks } = this.state;
 
-    if (cards.length === 0) {
-      cardContent = <Spinner />;
+    if (decks.length === 0) {
+      deckContent = <Spinner />;
     } else {
-      cardContent = this.state.cards.map(card => (
+      deckContent = this.state.cards.map(card => (
         <CardItem key={card.id} card={card} />
       ));
     }
-    return <CardsStyles>{cardContent}</CardsStyles>;
+    console.log(this.state.decks);
+    return (
+      <DeckStyles>
+        {this.state.decks.map(deck => {
+          return <Link to={`/decks/${deck.id}`}>{deck.id}</Link>;
+        })}
+        <DeckBody>{deckContent}</DeckBody>
+      </DeckStyles>
+    );
   }
 }
