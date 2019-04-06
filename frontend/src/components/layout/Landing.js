@@ -7,13 +7,14 @@ import Spinner from "../common/Spinner";
 const LandingStyles = styled.div`
   background-color: ${props => props.theme.offWhite}
   text-align: center;
+  padding: 100px;
 `;
 
 export default class Landing extends Component {
   render() {
     return (
-      <div>
-        <LandingStyles className="container">Hey World</LandingStyles>
+      <div className="container">
+        <LandingStyles>Hey World</LandingStyles>
       </div>
     );
   }

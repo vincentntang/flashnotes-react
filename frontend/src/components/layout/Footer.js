@@ -5,6 +5,7 @@ const FooterStyles = styled.footer`
   background-color: ${props => props.theme.grey}
   text-align: center;
   padding: 50px;
+  margin-top: 50px;
 `;
 
 const Footer = props => {

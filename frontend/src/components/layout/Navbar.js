@@ -6,6 +6,7 @@ const NavbarStyles = styled.nav`
   background-color: ${props => props.theme.grey}
   width: 100%;
   padding: 10px;
+  margin-bottom: 50px;
   background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   a {
     color: white;
