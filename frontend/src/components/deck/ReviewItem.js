@@ -32,6 +32,7 @@ class ReviewItem extends Component {
         {this.state.toggled ? (
           <div>
             <p>{this.props.answer}</p>
+            <button onClick={this.onSuccess}>You got it!</button>
           </div>
         ) : (
           <p>{this.props.question}</p>

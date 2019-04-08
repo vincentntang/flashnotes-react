@@ -20,17 +20,20 @@ export default class Review extends Component {
     let cardsInDeck = cards.filter(obj => obj.deck === deckID);
     const numCards = cardsInDeck.length;
     let cardContent;
+    console.log(numCards);
+    let i = 0;
 
     let succeed = false;
-    // Traverse cards
-    if (numCards > 0) {
+    // Traverse cards((
+    for (let i = 0; i < numCards; i++) {
       cardContent = (
         <ReviewItem
-          question={cardsInDeck[count].question}
-          answer={cardsInDeck[count].answer}
+          question={cardsInDeck[i].question}
+          answer={cardsInDeck[i].answer}
           onSuccess={this.onSuccess}
         />
       );
+      setTimeout(5000);
     }
     return <div>{cardContent}</div>;
   }
