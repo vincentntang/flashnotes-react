@@ -7,7 +7,7 @@ const MainData = {
       answer: "I'm answer one",
       createdAt: "DateTime",
       modifiedAt: "DateTime",
-      deck: "DeckID"
+      deck: "Deck1"
     },
     {
       id: "ID2",
@@ -15,7 +15,7 @@ const MainData = {
       answer: "I'm answer two",
       createdAt: "DateTime",
       modifiedAt: "DateTime",
-      deck: "DeckID"
+      deck: "Deck1"
     },
     {
       id: "ID3",
@@ -23,7 +23,7 @@ const MainData = {
       answer: "I'm answer three",
       createdAt: "DateTime",
       modifiedAt: "DateTime",
-      deck: "DeckID"
+      deck: "Deck2"
     },
     {
       id: "ID4",
@@ -31,7 +31,7 @@ const MainData = {
       answer: "I'm answer four",
       createdAt: "DateTime",
       modifiedAt: "DateTime",
-      deck: "DeckID"
+      deck: "Deck1"
     }
   ],
   decks: [
