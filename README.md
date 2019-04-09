@@ -11,6 +11,11 @@
   * [x] Add Nav Links and styling
   * [ ] Create new cards
 
+* [ ] Quiz functionality
+  * [ ] Start
+  * [ ] Transition cards until queue finished
+  * [ ] End condition
+
 Things learned along the way
 
 * Styled components library add on
@@ -18,6 +23,7 @@ Things learned along the way
 * Conditionally rendering components and styled-components method
 * Figuring out media queries and sass-styles https://jsramblings.com/2018/02/04/styled-components-media-queries.html
 * Defining routes (top level folder)
+* Seperate logic for recursively running commands (put it in a function that is triggered by an event button, so it calls another command)
 
 User Stories 
 
