@@ -32,8 +32,7 @@ export default class Review extends Component {
   }
   onSuccess = () => {
     // okay putting the logic here for rerendering makes more sense
-    console.log("I ran on success");
-    this.setState({ count: this.state.count++ });
+    this.setState({ count: this.state.count + 1 });
     this.renderCards();
   };
   // showCard = (cards, count) => {
@@ -56,14 +55,11 @@ export default class Review extends Component {
     let { count, finished, cards } = this.state;
 
     return (
-      <div>
-        hey
-        <ReviewItem
-          question={cards[count].question}
-          answer={cards[count].answer}
-          onSuccess={this.onSuccess}
-        />
-      </div>
+      <ReviewItem
+        question={cards[this.state.count].question}
+        answer={cards[this.state.count].answer}
+        onSuccess={this.onSuccess}
+      />
     );
     // Iterate, use recursion
     // if (count < cards.length) {

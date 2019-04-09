@@ -23,7 +23,7 @@ export default class Deck extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ cards: MainData.cards, decks: MainData.decks });
-    }, 2000);
+    }, 1000);
   }
   onReviewCards = () => {
     this.setState({ toggled: !this.state.toggled });
@@ -33,25 +33,29 @@ export default class Deck extends Component {
     let deckContent = "";
     let { toggled } = this.state;
 
-    if (toggled) {
-      deckContent = (
-        <Review
-          deckID={this.props.match.params.handle}
-          cards={this.state.cards}
-          decks={this.state.decks}
-        >
-          Hello
-        </Review>
-      );
+    if (this.state.decks.length === 0) {
+      deckContent = <Spinner />;
     } else {
-      deckContent = (
-        <div>
-          <div> {this.props.match.params.handle}</div>
-          <button onClick={this.onReviewCards}>Review Cards</button>
-          <button>Edit Cards</button>
-          <button>Options</button>
-        </div>
-      );
+      if (toggled) {
+        deckContent = (
+          <Review
+            deckID={this.props.match.params.handle}
+            cards={this.state.cards}
+            decks={this.state.decks}
+          >
+            Hello
+          </Review>
+        );
+      } else {
+        deckContent = (
+          <div>
+            <div> {this.props.match.params.handle}</div>
+            <button onClick={this.onReviewCards}>Review Cards</button>
+            <button>Edit Cards</button>
+            <button>Options</button>
+          </div>
+        );
+      }
     }
     return (
       <DeckStyles>
