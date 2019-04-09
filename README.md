@@ -10,6 +10,7 @@
   * [x] Add routing
   * [x] Add Nav Links and styling
   * [ ] Create new cards
+  * [ ] Change routing to `decks/:id/review`, and `decks/:id/edit`
 
 * [ ] Quiz functionality
   * [ ] Start
