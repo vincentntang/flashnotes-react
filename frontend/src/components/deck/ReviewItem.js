@@ -23,8 +23,12 @@ class ReviewItem extends Component {
   state = {
     toggled: false
   };
-  onClick = () => {
+  onToggle = () => {
     this.setState({ toggled: !this.state.toggled });
+  };
+  onFeedback = () => {
+    this.onToggle();
+    this.props.onSuccess();
   };
   render() {
     return (
@@ -32,12 +36,13 @@ class ReviewItem extends Component {
         {this.state.toggled ? (
           <div>
             <p>{this.props.answer}</p>
-            <button onClick={this.props.onSuccess}>You got it!</button>
+            <button onClick={this.onFeedback}>Easy</button>
+            <button onClick={this.onFeedback}>Hard</button>
           </div>
         ) : (
           <p>{this.props.question}</p>
         )}
-        <button onClick={this.onClick}>Toggle Card</button>
+        <button onClick={this.onToggle}>Toggle Card</button>
       </CardStyles>
     );
   }
