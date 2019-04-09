@@ -15,9 +15,10 @@
 * [ ] Quiz functionality
   * [ ] Start
   * [ ] Transition cards until queue finished
-  * [ ] End condition
+  * [ ] End condition - route back to `decks/:id`
+  
 
-Things learned along the way
+## Things learned along the way
 
 * Styled components library add on
 * Card component -> ES6 vs ES5 / constructor functions in backend
@@ -26,7 +27,35 @@ Things learned along the way
 * Defining routes (top level folder)
 * Seperate logic for recursively running commands (put it in a function that is triggered by an event button, so it calls another command)
 
-User Stories 
+
+## Endpoints
+
+See mocked up data sets currently being used under `data` folder. Not entirely secure (need to think about private routes)
+
+`GET /cards` returns all cards
+
+`GET /cards/card:id` return a specific cards content
+
+`GET /decks` returns all decks
+
+`GET /decks/deck:id` returns a specific deck
+
+`POST /cards` generate a new card
+
+`POST /decks` generate a new deck
+
+`GET /user/user:id` Show profile of user
+
+## Additional Routing structure and query params
+
+Query parameters are mostly for things like "searching for data between X param and Y param". This would be the same way, except for the notetaking portion side.
+
+`/decks/deck:id/edit` → edit your deck
+
+`/decks/deck:id/review` → review your deck
+
+
+## User Stories 
 
 * Not signed in
   * /  -> I can browse cards and add to my collection.
