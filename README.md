@@ -71,7 +71,8 @@ TL-DR; If you have to learn and memorize lots of things, flashnotes saves you ti
   * [x] Transition cards until queue finished
   * [x] End condition - route back to `decks/:id`
   * [ ] additional late features - ability to set {cloze} card types, and other
-  * [ ] Super memo 20 rules outline
+  * [ ] Super memo 20 rules outline when adding new cards
+  * [ ] `Position-absolute` on number of cards left in review queue with low opacity, until hovered.
 
 * [ ] Notes functionality
   * [ ] Use WYSIWYG options to allow user to quickly add questions/answers

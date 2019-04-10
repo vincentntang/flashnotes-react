@@ -66,7 +66,13 @@ const MainData = {
   sessions: [
     {
       id: "SessionID1",
-      dateFinished: "DateTime"
+      deckID: "Deck1",
+      dateStarted: "",
+      dateFinished: "DateTime",
+      cardsReviewed: [
+        { id: "ID3", perfRating: "" },
+        { id: "ID4", perfRating: "" }
+      ]
     }
   ]
 };
