@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Spinner from "../common/Spinner";
 import ReviewItem from "./ReviewItem";
 import MainData from "../data/MainData";
@@ -44,7 +45,9 @@ export default class Review extends Component {
 
     let cardContent;
     if (finished) {
-      cardContent = <div>Finished</div>;
+      cardContent = (
+        <Link to={`/decks/${this.props.match.params.handle}`}>Finished</Link>
+      );
     } else {
       cardContent = (
         <ReviewItem

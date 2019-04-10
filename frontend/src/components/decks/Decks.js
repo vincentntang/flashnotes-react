@@ -25,7 +25,7 @@ export default class Cards extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ cards: MainData.cards, decks: MainData.decks });
-    }, 2000);
+    }, 1000);
   }
 
   state = {
