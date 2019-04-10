@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-// import DeckItem from "./DeckItem";
-// import CardItem from "./CardItem";
 import MainData from "../data/MainData";
 import Spinner from "../common/Spinner";
 
@@ -24,17 +22,15 @@ const DeckBody = styled.div`
 export default class Cards extends Component {
   componentDidMount() {
     setTimeout(() => {
-      this.setState({ cards: MainData.cards, decks: MainData.decks });
+      this.setState({ decks: MainData.decks });
     }, 1000);
   }
 
   state = {
-    cards: [], //must be defined as render func runs right away
     decks: []
   };
   render() {
     let deckContent;
-    // const { cards } = this.state;
     const { decks } = this.state;
 
     if (decks.length === 0) {
