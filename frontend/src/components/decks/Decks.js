@@ -49,7 +49,7 @@ export default class Cards extends Component {
     console.log(this.state.decks);
     return (
       <DeckStyles>
-        <Link to="/decks/stats">Stats</Link>
+        {this.state.decks.length !== 0 && <Link to="/decks/stats">Stats</Link>}
         {deckContent}
       </DeckStyles>
     );
