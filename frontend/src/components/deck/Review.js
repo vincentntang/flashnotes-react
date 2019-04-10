@@ -32,32 +32,40 @@ export default class Review extends Component {
 
     // moved onsuccess to ComponentDidUpdate for awaiting async change
     if (this.state.count !== prevState.count) {
-      // console.log(this.state.count, "count");
-      // console.log(this.state.cards.length, "cardlength");
-      // if (this.state.count < 1) {
-      //   this.renderCards();
-      // }
     }
   }
   onToggle = () => {};
   onSuccess = () => {
-    // okay putting the logic here for rerendering makes more sense
-    this.setState({ count: this.state.count + 1 }); // this is async
+    if (this.state.count == this.state.cards.length - 1) {
+      this.setState({
+        finished: true
+      });
+    } else {
+      this.setState({
+        count: this.state.count + 1
+      });
+    }
   };
 
   renderCards = () => {
     const { deckID } = this.props;
     let { count, finished, cards } = this.state;
 
-    return (
-      <ReviewItem
-        question={cards[count].question}
-        answer={cards[count].answer}
-        onSuccess={this.onSuccess}
-        // onToggle={this.onToggle}
-        // toggled={false}
-      />
-    );
+    let cardContent;
+    if (finished) {
+      cardContent = <div>Finished</div>;
+    } else {
+      cardContent = (
+        <ReviewItem
+          question={cards[count].question}
+          answer={cards[count].answer}
+          onSuccess={this.onSuccess}
+          // onToggle={this.onToggle}
+          // toggled={false}
+        />
+      );
+    }
+    return cardContent;
   };
   render() {
     // Pause execution until cards loaded in

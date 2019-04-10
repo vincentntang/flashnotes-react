@@ -50,9 +50,13 @@ See mocked up data sets currently being used under `data` folder. Not entirely s
 
 Query parameters are mostly for things like "searching for data between X param and Y param". This would be the same way, except for the notetaking portion side.
 
+Defining routing is important if a user wants to go directly to a specific page
+
 `/decks/deck:id/edit` → edit your deck
 
 `/decks/deck:id/review` → review your deck
+
+`/cards/card:id/edit` > edit a specific card
 
 
 ## User Stories 
