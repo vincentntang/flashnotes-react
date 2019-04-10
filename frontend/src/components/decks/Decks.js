@@ -6,7 +6,8 @@ import MainData from "../data/MainData";
 import Spinner from "../common/Spinner";
 
 const DeckStyles = styled.section`
-  background-color: yellow;
+  background-color: #eee;
+  text-align:center;
   // background-color: ${props => props.theme.grey};
   // display: flex;
   // flex-wrap: wrap;
@@ -46,6 +47,11 @@ export default class Cards extends Component {
       });
     }
     console.log(this.state.decks);
-    return <DeckStyles>{deckContent}</DeckStyles>;
+    return (
+      <DeckStyles>
+        <Link to="/decks/stats">Stats</Link>
+        {deckContent}
+      </DeckStyles>
+    );
   }
 }

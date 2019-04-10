@@ -26,6 +26,7 @@
 * Figuring out media queries and sass-styles https://jsramblings.com/2018/02/04/styled-components-media-queries.html
 * Defining routes (top level folder)
 * Seperate logic for recursively running commands (put it in a function that is triggered by an event button, so it calls another command)
+* Building an end condition to quizes using state
 
 
 ## Endpoints
