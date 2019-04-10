@@ -7,7 +7,8 @@ const MainData = {
       answer: "I'm answer one",
       createdAt: "DateTime",
       modifiedAt: "DateTime",
-      deck: "Deck1"
+      deck: "Deck1",
+      rating: "" // [1-10 rating - 10 being difficult]
     },
     {
       id: "ID2",
