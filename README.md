@@ -76,6 +76,10 @@ TL-DR; If you have to learn and memorize lots of things, flashnotes saves you ti
 * [ ] Notes functionality
   * [ ] Use WYSIWYG options to allow user to quickly add questions/answers
 
+* [ ] Accessibility / IME / Language support
+  * [ ] Add ARIA labels for NVDA screen-readers (voice recognize answer using google's speech to text)
+  * [ ] Add i18 language support for multi language support
+
 ## Things learned along the way
 
 * Styled components library add on
@@ -135,6 +139,30 @@ The space-repetition algorithm (e.g. when flashcards need to be reviewed) will b
 This blogpost will be used to model the algorithm
 
 http://www.blueraja.com/blog/477/a-better-spaced-repetition-learning-algorithm-sm2
+
+## Current issues with existing software on market
+
+* Anki does not let you add images on it's web client
+* Desktop client is just more things that aren't needed
+* Ankidroid is nice, but really a webapp suffices. (react-native?)
+* Anki web client is just not spaced out correctly (not at optimal read-space length of 60-80 chars per line)
+
+## UI/UX interface on flashcard review
+
+This is how I see proper UI/UX design on flashcard queues.
+It should be based off the principles of speed-reading
+
+* A user sees a question
+* User clicks `space` or whatever, to show answer.
+* Answer takes the exact spot question was at
+* Question is hidden, user can hover over answer to see question. originally asked as a tooltip popout (position - absolute with extra padding above)
+
+## Additional featuresets for reviewing cards
+
+User can select different options to see what works best for them, for quickly adding cards
+
+* Reveal mode - time-based mode, user sees question and answer slowly reveals itself by slowly showcasing the word
+* Color mode - "Green text = Question" , "Blue Text="Answer".
 
 ## User Stories 
 

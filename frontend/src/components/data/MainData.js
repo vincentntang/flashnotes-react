@@ -3,8 +3,8 @@ const MainData = {
   cards: [
     {
       id: "ID1",
-      question: "I'm question one",
-      answer: "I'm answer one",
+      question: "What are pencils?",
+      answer: "They are used to write things",
       createdAt: "DateTime",
       modifiedAt: "DateTime",
       deck: "Deck1",
@@ -14,8 +14,8 @@ const MainData = {
     },
     {
       id: "ID2",
-      question: "I'm question two",
-      answer: "I'm answer two",
+      question: "What is a potato?",
+      answer: "A type of crop",
       createdAt: "DateTime",
       modifiedAt: "DateTime",
       deck: "Deck1",
@@ -25,8 +25,8 @@ const MainData = {
     },
     {
       id: "ID3",
-      question: "I'm question three",
-      answer: "I'm answer three",
+      question: "What is most popular state management for React?",
+      answer: "Redux",
       createdAt: "DateTime",
       modifiedAt: "DateTime",
       deck: "Deck2",
@@ -36,8 +36,8 @@ const MainData = {
     },
     {
       id: "ID4",
-      question: "I'm question four",
-      answer: "I'm answer four",
+      question: "What is common use case of React's componentDidMount?",
+      answer: "Updating Data to Store",
       createdAt: "DateTime",
       modifiedAt: "DateTime",
       deck: "Deck1",
