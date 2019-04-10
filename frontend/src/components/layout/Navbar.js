@@ -5,11 +5,14 @@ import { Link } from "react-router-dom";
 const NavbarStyles = styled.nav`
   background-color: ${props => props.theme.grey}
   width: 100%;
-  display: flex;
   padding: 10px;
+  margin-bottom: 50px;
   background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   a {
     color: white;
+  }
+  .container {
+    display: flex;
   }
   .home {
     font-weight: bold;
@@ -33,8 +36,8 @@ const NavbarStyles = styled.nav`
 export default class Navbar extends Component {
   render() {
     return (
-      <div className="container">
-        <NavbarStyles>
+      <NavbarStyles>
+        <div className="container">
           <Link to="/" className="home">
             Flash Notes
           </Link>
@@ -49,8 +52,8 @@ export default class Navbar extends Component {
               <Link to="/login">Login</Link>
             </li>
           </ul>
-        </NavbarStyles>
-      </div>
+        </div>
+      </NavbarStyles>
     );
   }
 }
