@@ -9,13 +9,19 @@
 * [ ] Add Routing + Create Cards
   * [x] Add routing
   * [x] Add Nav Links and styling
-  * [ ] Create new cards
-  * [ ] Change routing to `decks/:id/review`, and `decks/:id/edit`
+  * [x] Change routing to `decks/:id/review`, and `decks/:id/edit`
 
 * [ ] Quiz functionality
-  * [ ] Start
-  * [ ] Transition cards until queue finished
-  * [ ] End condition - route back to `decks/:id`
+  * [ ] Cards CRUD functionality
+  * [ ] Decks CRUD functionality
+  * [ ] Store score assigned to each card on review (store as a date)
+  * [ ] Generate a space repetition algorithm for updating cards
+  * [x] Transition cards until queue finished
+  * [x] End condition - route back to `decks/:id`
+
+* [ ] Notes functionality
+  * Use MIT  
+
   
 
 ## Things learned along the way
@@ -49,15 +55,13 @@ See mocked up data sets currently being used under `data` folder. Not entirely s
 
 ## Additional Routing structure and query params
 
-Query parameters are mostly for things like "searching for data between X param and Y param". This would be the same way, except for the notetaking portion side.
+Defining routing is important if a user wants to go directly to a specific page. They mostly reflect the endpoints specified in backend, and tell the user's side.
 
-Defining routing is important if a user wants to go directly to a specific page
-
-`/decks/deck:id/edit` → edit your deck
-
-`/decks/deck:id/review` → review your deck
-
-`/cards/card:id/edit` > edit a specific card
+* /decks
+  * /stats
+  * /:deckID
+    * /edit
+    * /review
 
 
 ## User Stories 
@@ -66,9 +70,6 @@ Defining routing is important if a user wants to go directly to a specific page
   * /  -> I can browse cards and add to my collection.
 
 * Signed in
-  * /Stats - I see analytics, decks to refresh, etc
-    * I can see what I typed in one day, 7 days, and last 30 days (by card type)
-    * I can see a commit graph of sorts
   * /Decks - I can see my deck
     * I can add a card quickly here.
     * I can review my cards quickly
@@ -76,5 +77,13 @@ Defining routing is important if a user wants to go directly to a specific page
     * I can get card recommendation from others.
     * I can set my preferences, to indicate what cards I want to see
     * I can see what others tag with the same cards
+  * /Decks/Stats
+    * I can see my flash cards reviewed
+    * I can see days I did not review cards
+    * I can see how many cards I reviewed total, in past week, and averages
   * /Notes - I can see my notes
-    * Leftside shows a folder pane
+    * I see folder pane on left side
+    * I can quickly tag content for later
+    * I can search for notes quickly, either (1) by rich search, or (2) by tags
+    * I can quickly add cards using "Question ? Front : Back" syntax 
+    * I can see a list of quick commands

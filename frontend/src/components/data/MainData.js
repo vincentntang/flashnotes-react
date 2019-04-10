@@ -37,13 +37,24 @@ const MainData = {
   decks: [
     {
       id: "Deck1",
-      title: "Javascript Deck"
+      title: "Javascript Deck",
+      createdAt: "DateTime",
+      modifiedAt: "DateTime"
       // cardIds: ["ID1", "ID2"]
     },
     {
       id: "Deck2",
-      title: "PHP Deck"
+      title: "PHP Deck",
+      createdAt: "DateTime",
+      modifiedAt: "DateTime"
       // cardIds: ["ID3,ID4"]
+    }
+  ],
+  // Space repetition algorithm.
+  sessions: [
+    {
+      id: "SessionID1",
+      dateFinished: "DateTime"
     }
   ]
 };
