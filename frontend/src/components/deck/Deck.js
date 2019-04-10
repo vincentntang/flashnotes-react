@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import MainData from "../data/MainData";
 import Spinner from "../common/Spinner";
 import Review from "./Review";
 
 const DeckStyles = styled.div`
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
 `;
 const DeckBody = styled.div`
   border: 1px solid;
@@ -37,6 +38,7 @@ export default class Deck extends Component {
     } else {
       deckContent = (
         <div>
+          <Link to="/decks">Back to Decks</Link>
           <div> {this.props.match.params.handle}</div>
           <button onClick={this.onReviewCards}>Review Cards</button>
           <button>Edit Cards</button>
