@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import Spinner from "../common/Spinner";
 import ReviewItem from "./ReviewItem";
 /**
- * Review containes all the logic for handling cards
+ * Review containes all the logic for reviewing cards
  * Has card and state
  */
-
-// STATES
-
 export default class Review extends Component {
   state = {
     count: 0,
@@ -15,10 +12,7 @@ export default class Review extends Component {
     cards: [] // filtered data from props
   };
   componentDidMount() {
-    // Normally, you would axios call only the data you need
-    // but in this case I filtered out all the props to the deck I want
-    // axios dispatch to GET data
-    // ASYNC
+    // Pass props to state (placeholder for axios call)
     this.setState({
       cards: this.props.cards.filter(obj => {
         console.log("I ran!");
@@ -27,10 +21,6 @@ export default class Review extends Component {
     });
   }
   componentDidUpdate(prevProps, prevState) {
-    // reserved when I need to push back the result,
-    // or dispatch an action to POST back data
-
-    // moved onsuccess to ComponentDidUpdate for awaiting async change
     if (this.state.count !== prevState.count) {
     }
   }
@@ -60,8 +50,6 @@ export default class Review extends Component {
           question={cards[count].question}
           answer={cards[count].answer}
           onSuccess={this.onSuccess}
-          // onToggle={this.onToggle}
-          // toggled={false}
         />
       );
     }
