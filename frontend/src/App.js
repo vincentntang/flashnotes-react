@@ -10,6 +10,7 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Decks from "./components/decks/Decks";
 import Deck from "./components/deck/Deck";
+import Review from "./components/deck/Review";
 
 // SCSS Variables declaration
 const theme = {
@@ -41,6 +42,7 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/decks" component={Decks} />
               <Route exact path="/decks/:handle" component={Deck} />
+              <Route exact path="/decks/:handle/review" component={Review} />
             </div>
             <Footer />
           </div>

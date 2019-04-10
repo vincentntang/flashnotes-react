@@ -43,7 +43,7 @@ export default class Cards extends Component {
       deckContent = this.state.decks.map(deck => {
         return (
           <DeckBody>
-            <Link to={`/deck/${deck.id}`}>{deck.id}</Link>
+            <Link to={`/decks/${deck.id}`}>{deck.id}</Link>
             <p>{deck.title}</p>
           </DeckBody>
         );

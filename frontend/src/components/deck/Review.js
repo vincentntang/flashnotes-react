@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Spinner from "../common/Spinner";
 import ReviewItem from "./ReviewItem";
+import MainData from "../data/MainData";
 /**
  * Review containes all the logic for reviewing cards
  * Has card and state
@@ -9,14 +10,14 @@ export default class Review extends Component {
   state = {
     count: 0,
     finished: false,
-    cards: [] // filtered data from props
+    cards: [] // filtered data from props,
   };
   componentDidMount() {
     // Pass props to state (placeholder for axios call)
     this.setState({
-      cards: this.props.cards.filter(obj => {
+      cards: MainData.cards.filter(obj => {
         console.log("I ran!");
-        return obj.deck === this.props.deckID;
+        return obj.deck === this.props.match.params.handle;
       })
     });
   }
