@@ -8,7 +8,9 @@ const MainData = {
       createdAt: "DateTime",
       modifiedAt: "DateTime",
       deck: "Deck1",
-      rating: "" // [1-10 rating - 10 being difficult]
+      difficulty: 0.3, // [1-10 rating - 10 being difficult],
+      daysBetweenReviews: 1,
+      dateLastReviewed: ""
     },
     {
       id: "ID2",
@@ -16,7 +18,10 @@ const MainData = {
       answer: "I'm answer two",
       createdAt: "DateTime",
       modifiedAt: "DateTime",
-      deck: "Deck1"
+      deck: "Deck1",
+      difficulty: 0.3, // [1-10 rating - 10 being difficult],
+      daysBetweenReviews: 1,
+      dateLastReviewed: ""
     },
     {
       id: "ID3",
@@ -24,7 +29,10 @@ const MainData = {
       answer: "I'm answer three",
       createdAt: "DateTime",
       modifiedAt: "DateTime",
-      deck: "Deck2"
+      deck: "Deck2",
+      difficulty: 0.3, // [1-10 rating - 10 being difficult],
+      daysBetweenReviews: 1,
+      dateLastReviewed: ""
     },
     {
       id: "ID4",
@@ -32,7 +40,10 @@ const MainData = {
       answer: "I'm answer four",
       createdAt: "DateTime",
       modifiedAt: "DateTime",
-      deck: "Deck1"
+      deck: "Deck1",
+      difficulty: 0.3, // [1-10 rating - 10 being difficult],
+      daysBetweenReviews: 1,
+      dateLastReviewed: ""
     }
   ],
   decks: [

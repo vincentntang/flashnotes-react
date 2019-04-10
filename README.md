@@ -132,8 +132,9 @@ The space-repetition algorithm (e.g. when flashcards need to be reviewed) will b
 
 ## Math behind space-repetition algorithm
 
-I(1)=OF[1,L+1]
-I(n)=I(n-1)*OF[n,AF]
+This blogpost will be used to model the algorithm
+
+http://www.blueraja.com/blog/477/a-better-spaced-repetition-learning-algorithm-sm2
 
 ## User Stories 
 
