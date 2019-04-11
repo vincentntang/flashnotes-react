@@ -106,6 +106,7 @@ TL-DR; If you have to learn and memorize lots of things, flashnotes saves you ti
 * Templating all the major routes
 * Folder organization, one folder = one route. For instance `/decks`. Any files within these, are additional forked routes. Such as `decks/:deckid/addCard`.
 * Applying CRUD functionality to `cards` and `decks` required a backend hooked up, unless props are passed down to the other subroutes
+* Route wouldn't load, had `component` misspelled in router as `components` which sent the wrong prop. Was told you could add `$ npm i @types/react-router -D` and `// @ts-check` at the top of `app.js` to catch the error
 
 ## Endpoints
 

@@ -1,3 +1,5 @@
+// @ts-check
+
 import React, { Component } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -46,9 +48,9 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/decks" component={Decks} />
               <Switch>
-                <Route exact path="/decks/add" components={AddDecks} />
-                <Route exact path="/decks/stats" components={Stats} />
-                {/* <Route exact path="/decks/:handle" component={Deck} /> */}
+                <Route exact path="/decks/add" component={AddDecks} />
+                <Route exact path="/decks/stats" component={Stats} />
+                <Route exact path="/decks/:handle" component={Deck} />
               </Switch>
               <Switch>
                 <Route exact path="/decks/:handle/add" component={AddCards} />
