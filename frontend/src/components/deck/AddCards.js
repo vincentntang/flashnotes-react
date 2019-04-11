@@ -1,7 +1,15 @@
 import React, { Component } from "react";
+import MainData from "../data/MainData";
 
-export default class AddCards extends Component {
+class AddCards extends Component {
+  state = {
+    decks: [],
+    cards: []
+  };
+  componentDidMount() {}
   render() {
     return <div>Add Cards</div>;
   }
 }
+
+export default AddCards;

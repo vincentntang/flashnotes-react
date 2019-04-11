@@ -99,7 +99,7 @@ TL-DR; If you have to learn and memorize lots of things, flashnotes saves you ti
 * Defining things in as small components as possible
 * Templating all the major routes
 * Folder organization, one folder = one route. For instance `/decks`. Any files within these, are additional forked routes. Such as `decks/:deckid/addCard`.
-
+* Applying CRUD functionality to `cards` and `decks` required a backend hooked up, unless props are passed down to the other subroutes
 
 ## Endpoints
 
