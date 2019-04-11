@@ -84,6 +84,9 @@ TL-DR; If you have to learn and memorize lots of things, flashnotes saves you ti
 * [ ] Login / Register / Auth
   * [x] Placeholder for login/register
 
+* [ ] Development Tools
+  * [x] Using a base outline feature for debugging 3rd or 4th level styles
+
 ## Things I'm doing from start to finish
 
 * Styled components library add on
