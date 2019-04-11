@@ -70,8 +70,8 @@ const MainData = {
       dateStarted: "",
       dateFinished: "DateTime",
       cardsReviewed: [
-        { id: "ID3", perfRating: "" },
-        { id: "ID4", perfRating: "" }
+        { id: "ID3", performance: "" },
+        { id: "ID4", performance: "" }
       ]
     }
   ]
