@@ -81,7 +81,10 @@ TL-DR; If you have to learn and memorize lots of things, flashnotes saves you ti
   * [ ] Add ARIA labels for NVDA screen-readers (voice recognize answer using google's speech to text)
   * [ ] Add i18 language support for multi language support
 
-## Things learned along the way
+* [ ] Login / Register / Auth
+  * [x] Placeholder for login/register
+
+## Things I'm doing from start to finish
 
 * Styled components library add on
 * Card component -> ES6 vs ES5 / constructor functions in backend
@@ -90,6 +93,9 @@ TL-DR; If you have to learn and memorize lots of things, flashnotes saves you ti
 * Defining routes (top level folder)
 * Seperate logic for recursively running commands (put it in a function that is triggered by an event button, so it calls another command)
 * Building an end condition to quizes using state
+* Defining things in as small components as possible
+* Templating all the major routes
+* Folder organization, one folder = one route. For instance `/decks`. Any files within these, are additional forked routes. Such as `decks/:deckid/addCard`.
 
 
 ## Endpoints
