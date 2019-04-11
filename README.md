@@ -58,10 +58,11 @@ TL-DR; If you have to learn and memorize lots of things, flashnotes saves you ti
   * [x] Toggle logic for front/back card
   * [x] Conditionally render classes
 
-* [ ] Add Routing + Create Cards
+* [ ] Add Routing
   * [x] Add routing
   * [x] Add Nav Links and styling
-  * [x] Change routing to `decks/:id/review`, and `decks/:id/edit`
+  * [x] Change routing to `/decks/:id/review`, and `decks/:id/edit`
+  * [ ] Refactor Edit/Add card to `/cards/edit/?deckid=deckid` params because this could be done on `decks` or `deck` route. Use `history` to go back somehow, as user might modify query parameters for search (possibly cache this?)
 
 * [ ] Quiz functionality
   * [ ] Cards CRUD functionality
@@ -86,6 +87,11 @@ TL-DR; If you have to learn and memorize lots of things, flashnotes saves you ti
 
 * [ ] Development Tools
   * [x] Using a base outline feature for debugging 3rd or 4th level styles
+
+* [ ] Marketing
+  * [ ] Make a nice frontend landing page
+  * [ ] Create a design in Figma
+  * [ ] Add Formspree (possibly just make a non-react homepage, AJAX call features cost money), formcarry, Airtable, or google firebase
 
 ## Things I'm doing from start to finish
 
