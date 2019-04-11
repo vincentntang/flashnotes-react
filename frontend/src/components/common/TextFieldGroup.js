@@ -12,6 +12,9 @@ const TextFieldStyles = styled.div`
     color: ${props => (props.toggled ? "blue" : "green")};
   }
 `;
+const StyledInfo = styled.div``;
+
+const StyledErrors = styled.div``;
 const TextFieldGroup = ({
   name,
   placeholder,
@@ -25,9 +28,29 @@ const TextFieldGroup = ({
 }) => {
   return (
     <TextFieldStyles>
-      <input type={type} />
+      <input
+        type={type}
+        placeholder={placeholder}
+        name={name}
+        value={value}
+        onChange={onChange}
+        disabled={disabled}
+      />
+      {info && <StyledInfo>{info}</StyledInfo>}
+      {error && <StyledErrors>{error}</StyledErrors>}
     </TextFieldStyles>
   );
+};
+
+TextFieldGroup.propTypes = {
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  info: PropTypes.string,
+  error: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  onChange: PropTypes.string.isRequired,
+  disabled: PropTypes.string
 };
 
 export default TextFieldGroup;
