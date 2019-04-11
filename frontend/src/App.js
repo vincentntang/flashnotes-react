@@ -12,6 +12,8 @@ import Decks from "./components/decks/Decks";
 import Stats from "./components/decks/Stats";
 import Deck from "./components/deck/Deck";
 import Review from "./components/deck/Review";
+import EditCards from "./components/deck/EditCards";
+import AddCards from "./components/deck/AddCards";
 
 // SCSS Variables declaration
 const theme = {
@@ -45,6 +47,10 @@ class App extends Component {
               <Switch>
                 <Route exact path="/decks/stats" components={Stats} />
                 <Route exact path="/decks/:handle" component={Deck} />
+              </Switch>
+              <Switch>
+                <Route exact path="/decks/:handle/add" component={AddCards} />
+                <Route exact path="/decks/:handle/edit" component={EditCards} />
                 <Route exact path="/decks/:handle/review" component={Review} />
               </Switch>
             </div>
