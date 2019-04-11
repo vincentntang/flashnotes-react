@@ -2,16 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-const TextFieldStyles = styled.div`
-  text-align: center;
-  padding: 50px;
-  border: 1px solid red;
-  flex: 1;
-  background-color: ${props => props.theme.offWhite};
-  p {
-    color: ${props => (props.toggled ? "blue" : "green")};
-  }
-`;
+const TextFieldStyles = styled.div``;
 const StyledInfo = styled.div``;
 
 const StyledErrors = styled.div``;

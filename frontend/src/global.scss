@@ -27,7 +27,10 @@
 
 // This is so I can see the base container of each component
 body > * > * > *{
-  outline: 0.5px dashed red;
+  outline: 1px dashed red;
+}
+body > * > * > * > *{
+  outline: 2px dashed green;
 }
 
 
