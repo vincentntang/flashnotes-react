@@ -5,7 +5,10 @@ const StyledEditCards = styled.div`
   display: flex;
   flex-wrap: wrap;
   > div {
-    width: 50%;
+    width: calc(50% - 25px);
+  }
+  > button {
+    flex-basis: 50px;
   }
 `;
 const StyledQuestion = styled.div``;
@@ -16,6 +19,7 @@ const EditCardItem = props => {
     <StyledEditCards>
       <StyledQuestion>{props.question}</StyledQuestion>
       <StyledAnswer>{props.answer}</StyledAnswer>
+      <button>Edit</button>
     </StyledEditCards>
   );
 };
