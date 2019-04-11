@@ -19,7 +19,8 @@ const EditCardItem = props => {
     <StyledEditCards>
       <StyledQuestion>{props.question}</StyledQuestion>
       <StyledAnswer>{props.answer}</StyledAnswer>
-      <button>Edit</button>
+      <i className="fas fa-pen" />
+      <i className="fas fa-graduation-cap" />
     </StyledEditCards>
   );
 };
