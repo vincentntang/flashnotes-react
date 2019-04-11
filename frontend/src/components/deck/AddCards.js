@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import MainData from "../data/MainData";
 import TextFieldGroup from "../common/TextFieldGroup";
@@ -8,6 +9,7 @@ const StyledAddCards = styled.div`
   text-align: center;
 `;
 const StyledForm = styled.form``;
+const StyledHeader = styled.div``;
 
 class AddCards extends Component {
   state = {
@@ -27,6 +29,11 @@ class AddCards extends Component {
     const { errors } = this.state;
     return (
       <StyledAddCards>
+        <StyledHeader>
+          <Link to={`/decks/${this.props.match.params.handle}`}>
+            Back to deck
+          </Link>
+        </StyledHeader>
         <StyledForm>
           <TextFieldGroup
             placeholder="Question"

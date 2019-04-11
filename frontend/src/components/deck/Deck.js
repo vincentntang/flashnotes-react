@@ -22,7 +22,7 @@ export default class Deck extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ decks: MainData.decks });
-    }, 1000);
+    }, 500);
   }
   onReviewCards = () => {
     // this.setState({ toggled: !this.state.toggled });
