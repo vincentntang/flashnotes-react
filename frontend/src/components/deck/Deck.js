@@ -41,8 +41,16 @@ export default class Deck extends Component {
           <Link to="/decks">Back to Decks</Link>
           <div> {this.props.match.params.handle}</div>
           <button onClick={this.onReviewCards}>Review Cards</button>
-          <button>Edit Cards</button>
-          <button>Options</button>
+          <button>
+            <Link to={`/decks/${this.props.match.params.handle}/edit`}>
+              Edit Cards
+            </Link>
+          </button>
+          <button>
+            <Link to={`/decks/${this.props.match.params.handle}/add`}>
+              Add Cards
+            </Link>
+          </button>
         </div>
       );
     }
