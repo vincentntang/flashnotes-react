@@ -6,7 +6,7 @@ const StyledLogin = styled.section`
   text-align: center;
 `;
 const StyledHeader = styled.div``;
-const StyledBody = styled.div``;
+const StyledForm = styled.form``;
 
 class Login extends Component {
   state = {
@@ -26,7 +26,7 @@ class Login extends Component {
         <StyledHeader>
           <h1>Login</h1>
         </StyledHeader>
-        <StyledBody>
+        <StyledForm>
           <TextFieldGroup
             placeholder="Email Address"
             name="email"
@@ -43,7 +43,8 @@ class Login extends Component {
             onChange={this.onChange}
             error={errors.password}
           />
-        </StyledBody>
+          <input type="submit" />
+        </StyledForm>
       </StyledLogin>
     );
   }
