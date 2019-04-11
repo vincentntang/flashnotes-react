@@ -8,7 +8,7 @@ const CardStyles = styled.div`
   flex: 1;
   background-color: ${props => props.theme.offWhite};
   p {
-    color: ${props => (props.toggled ? "red" : "green")};
+    color: ${props => (props.toggled ? "blue" : "green")};
   }
 `;
 

@@ -31,6 +31,15 @@ const NavbarStyles = styled.nav`
     list-style-type:none;
     margin-left: 10px;
   }
+  a {
+    &:focus,
+    &:active,
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  
 `;
 
 export default class Navbar extends Component {

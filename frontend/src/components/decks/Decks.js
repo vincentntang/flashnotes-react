@@ -2,13 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-// import DeckItem from "./DeckItem";
-// import CardItem from "./CardItem";
 import MainData from "../data/MainData";
 import Spinner from "../common/Spinner";
 
 const DeckStyles = styled.section`
-  background-color: yellow;
+  background-color: #eee;
+  text-align:center;
   // background-color: ${props => props.theme.grey};
   // display: flex;
   // flex-wrap: wrap;
@@ -24,17 +23,15 @@ const DeckBody = styled.div`
 export default class Cards extends Component {
   componentDidMount() {
     setTimeout(() => {
-      this.setState({ cards: MainData.cards, decks: MainData.decks });
-    }, 2000);
+      this.setState({ decks: MainData.decks });
+    }, 500);
   }
 
   state = {
-    cards: [], //must be defined as render func runs right away
     decks: []
   };
   render() {
     let deckContent;
-    // const { cards } = this.state;
     const { decks } = this.state;
 
     if (decks.length === 0) {
@@ -43,13 +40,18 @@ export default class Cards extends Component {
       deckContent = this.state.decks.map(deck => {
         return (
           <DeckBody>
-            <Link to={`/deck/${deck.id}`}>{deck.id}</Link>
+            <Link to={`/decks/${deck.id}`}>{deck.id}</Link>
             <p>{deck.title}</p>
           </DeckBody>
         );
       });
     }
     console.log(this.state.decks);
-    return <DeckStyles>{deckContent}</DeckStyles>;
+    return (
+      <DeckStyles>
+        {this.state.decks.length !== 0 && <Link to="/decks/stats">Stats</Link>}
+        {deckContent}
+      </DeckStyles>
+    );
   }
 }

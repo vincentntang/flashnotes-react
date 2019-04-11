@@ -25,14 +25,12 @@
   @include screen-min(1200px){max-width: 1140px;}
 }
 
-a {
-  &:focus,
-  &:active,
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
+// This is so I can see the base container of each component
+body > * > * > *{
+  outline: 1px dashed red;
 }
-
+body > * > * > * > *{
+  outline: 2px dashed green;
+}
 
 
