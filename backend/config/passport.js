@@ -1,4 +1,4 @@
-// module.exports = passport => {
-//   console.log(passport);
-//   return passport;
-// };
+module.exports = passport => {
+  console.log(passport);
+  return passport;
+};
