@@ -28,8 +28,7 @@ const app = express();
 // require("./config/passport")(passport);
 
 // // Use Routes
-// app.use("/api/users", users);
-app.get("/test", (req, res) => res.json({ msg: "User Works" }));
+app.use("/api/users", users);
 
 const port = process.env.PORT || 5000;
 
