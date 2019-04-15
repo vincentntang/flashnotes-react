@@ -13,7 +13,7 @@ const users = require("./routes/api/users");
 const app = express();
 
 // // Connect database
-// const db = require("./config/keys").mongoURI;
+const db = require("./config/keys").mongoURI;
 
 // // Connect to mongoDB
 // mongoose
@@ -22,10 +22,10 @@ const app = express();
 //   .catch(err => console.log(err));
 
 // Passport middleware
-app.use(passport.initialize());
+// app.use(passport.initialize());
 
-// Passport config
-require("./config/passport")(passport);
+// // Passport config
+// require("./config/passport")(passport);
 
 // Use Routes
 app.use("/api/users", users);
