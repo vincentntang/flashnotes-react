@@ -29,6 +29,7 @@ const app = express();
 
 // // Use Routes
 // app.use("/api/users", users);
+app.get("/test", (req, res) => res.json({ msg: "User Works" }));
 
 const port = process.env.PORT || 5000;
 
