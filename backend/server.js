@@ -1,21 +1,35 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const passport = require("passport");
+const path = require("path"); // part of nodeJS core lib
 
-// Create express app
+const cards = require("./routes/api/cards");
+const decks = require("./routes/api/decks");
+const notes = require("./routes/api/notes");
+const users = require("./routes/api/users");
+
+// Define express
 const app = express();
 
-// parse requests of content type
-app.use(bodyParser.urlencoded({ extended: true }));
+// // Connect database
+// const db = require("./config/keys").mongoURI;
 
-// parse requests of content-type application json
-app.use(bodyParser.json());
+// // Connect to mongoDB
+// mongoose
+//   .connect(db)
+//   .then(() => console.log("MongoDB Connected"))
+//   .catch(err => console.log(err));
 
-// Define a simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to easy notes app" });
-});
+// // Passport middleware
+// app.use(passport.initialize());
 
-// Listen for requests
-app.listen(3000, () => {
-  console.log("Server is listening to port 3000");
-});
+// // Passport config
+// require("./config/passport")(passport);
+
+// // Use Routes
+// app.use("/api/users", users);
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log(`Serving running on ${port}`));
