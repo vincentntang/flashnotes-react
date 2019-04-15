@@ -24,11 +24,13 @@ const app = express();
 // // Passport middleware
 // app.use(passport.initialize());
 
-// // Passport config
+// // // Passport config
 // require("./config/passport")(passport);
 
 // // Use Routes
 app.use("/api/users", users);
+
+const router = express.Router();
 
 const port = process.env.PORT || 5000;
 
