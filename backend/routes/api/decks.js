@@ -13,11 +13,23 @@ router.get("/test", (req, res) => res.json({ msg: "Deck Route Works" }));
 // @route   GET api/decks
 // @desc    Get all decks
 // @access  Private
-// TODO - Convert this to private
+// TODO - Auth and match decks made by user
 router.get("/", (req, res) => {
   Deck.find()
     .then(decks => res.json(decks))
     .catch(err => res.status(404).json({ nodecksfound: "No decks found" }));
+});
+
+// @route   GET api/decks/:id
+// @desc    Get specific deck, e.g. see its owner
+// @access  Private
+// TODO - Authenticate and match deck
+router.get("/:id", (req, res) => {
+  Deck.findById(req.params.id)
+    .then(deck => res.json(deck))
+    .catch(err =>
+      res.status(404).json({ nopostfound: "No post found with that id" })
+    );
 });
 
 // @route   POST api/decks
