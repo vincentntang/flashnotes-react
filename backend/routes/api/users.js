@@ -82,8 +82,9 @@ router.post("/login", (req, res) => {
       errors.email = "User not found";
       return res.status(404).json(errors);
     }
-
     // Check Password
+    // password = test12345
+    // user.password = hashed
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
         // User Matched
