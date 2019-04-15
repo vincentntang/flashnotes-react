@@ -33,4 +33,4 @@ const CardSchema = new Schema(
   }
 );
 
-module.exports = User = mongoose.model("cards", UserSchema);
+module.exports = User = mongoose.model("cards", CardSchema);
