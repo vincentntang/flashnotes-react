@@ -12,6 +12,10 @@ const users = require("./routes/api/users");
 // Define express
 const app = express();
 
+// body parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 // // Connect database
 const db = require("./config/keys").mongoURI;
 
