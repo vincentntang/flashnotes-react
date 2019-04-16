@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 
 const Deck = require("../../models/Deck");
+const User = require("../../models/User");
 
 // @route   GET api/decks/test
 // @desc    Tests decks route
@@ -39,6 +40,7 @@ router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    console.log(req);
     const newDeck = new Deck({
       title: req.body.title,
       user: req.user.id
@@ -46,4 +48,32 @@ router.post(
     newDeck.save().then(deck => res.json(deck));
   }
 );
+
+// @route  DELETE api/decks/:id
+// @desc   Delete a specific deck
+// @access Private
+router.delete(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    // Check if users logged in
+    console.log(req);
+    User.findOne({ user: req.user.id }).then(user => {
+      Deck.findById(req.params.id)
+        .then(deck => {
+          // Check for deck owner
+          if (deck.user.toString() !== req.user.id) {
+            return res
+              .status(401)
+              .json({ notauthorized: "User not authorized" });
+          }
+
+          // Delete
+          deck.remove().then(() => res.json({ success: true }));
+        })
+        .catch(err => res.status(404).json({ decknotfound: "No deck found" }));
+    });
+  }
+);
+
 module.exports = router;
