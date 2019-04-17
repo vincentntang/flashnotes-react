@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const mongoose = require("mongoose");
+const passport = require("passport");
 
 const Deck = require("../../models/Deck");
 const User = require("../../models/User");
@@ -20,4 +22,32 @@ router.get("/", (req, res) => {
     .catch(err => res.status(404).json({ nocardsfound: "No decks found" }));
 });
 
+// @route   POST api/cards
+// @desc    Create cards
+// @access  Private
+router.post(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    // Check if deck belongs to that user
+    Deck.findById(req.body.deckID)
+      .then(deck => {
+        if (deck.user == req.user.id) {
+          const newCard = new Card({
+            question: req.body.question,
+            answer: req.body.question,
+            deck: req.body.deckID, // user selects a deck and chooses
+            difficulty: 0.3,
+            daysBetweenReviews: 1,
+            note: req.body.note,
+            user: req.user.id
+          });
+          newCard.save().then(card => res.json(card));
+        } else {
+          return "Did not run";
+        }
+      })
+      .catch(err => console.log(err));
+  }
+);
 module.exports = router;

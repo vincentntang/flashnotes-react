@@ -14,7 +14,8 @@ const CardSchema = new Schema(
     },
     deck: {
       type: Schema.Types.ObjectId,
-      ref: "decks"
+      ref: "decks",
+      required: true
     },
     difficulty: {
       type: Number,
