@@ -26,6 +26,10 @@ const CardSchema = new Schema(
     },
     dateLastReviewed: {
       type: Date
+    },
+    note: {
+      type: Schema.Types.ObjectId,
+      ref: "notes"
     }
   },
   {
@@ -33,4 +37,4 @@ const CardSchema = new Schema(
   }
 );
 
-module.exports = User = mongoose.model("cards", CardSchema);
+module.exports = Card = mongoose.model("cards", CardSchema);

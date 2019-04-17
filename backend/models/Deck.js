@@ -18,4 +18,4 @@ const DeckSchema = new Schema(
   }
 );
 
-module.exports = User = mongoose.model("decks", DeckSchema);
+module.exports = Deck = mongoose.model("decks", DeckSchema);
