@@ -31,6 +31,10 @@ const CardSchema = new Schema(
     note: {
       type: Schema.Types.ObjectId,
       ref: "notes"
+    },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "users"
     }
   },
   {

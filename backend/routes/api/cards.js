@@ -66,13 +66,28 @@ router.post(
 );
 
 // @route   DELETE api/cards
-// @desc    Delete cards
+// @desc    Delete a card
 // @access  Private
-router.post(
+router.delete(
   "/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Card.findById(req.params.id);
+    User.findOne({ user: req.user.id }).then(user => {
+      Card.findById(req.params.id)
+        .then(card => {
+          // Check for post owner
+          console.log(card.user.toString());
+          if (card.user.toString() !== req.user.id) {
+            return res
+              .status(401)
+              .json({ notauthorized: "User notaa authorized" });
+          }
+
+          // Delete
+          card.remove().then(() => res.json({ success: true }));
+        })
+        .catch(err => res.status(404).json({ cardnotfound: "No card found" }));
+    });
   }
 );
 
