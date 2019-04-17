@@ -31,7 +31,6 @@ router.post(
   (req, res) => {
     // Check if deck belongs to that user
     Deck.findById(req.body.deckID)
-      // .then(deck => deck.user !== req.user.id)
       .then(deck => {
         if (deck.user == req.user.id) {
           const newCard = new Card({
@@ -45,7 +44,9 @@ router.post(
           });
           newCard.save().then(card => res.json(card));
         } else {
-          // todo - error log if the deck.user and req.user.id are not equal
+          return res
+            .status(401)
+            .json({ notRightUser: "This is not user's cards" });
         }
       })
       .catch(err => console.log(err));
