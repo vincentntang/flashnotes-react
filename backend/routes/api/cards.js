@@ -15,11 +15,23 @@ router.get("/test", (req, res) => res.json({ msg: "Posts Works" }));
 // @route   GET api/cards
 // @desc    Grab all cards
 // @access  Private
-// TODO - Auth and match decks made by user
+// TODO - Grab all cards specific to that user
 router.get("/", (req, res) => {
   Card.find()
     .then(cards => res.json(cards))
     .catch(err => res.status(404).json({ nocardsfound: "No decks found" }));
+});
+
+// @route   GET api/cards
+// @desc    Grab a single card
+// @access  Private
+// TODO - Grab card, but make sure it's private and owned by user
+router.get("/:id", (req, res) => {
+  Card.findById(req.params.id)
+    .then(card => res.json(card))
+    .catch(err =>
+      res.status(404).json({ nocardfound: "No card found with that id" })
+    );
 });
 
 // @route   POST api/cards
@@ -52,4 +64,16 @@ router.post(
       .catch(err => console.log(err));
   }
 );
+
+// @route   DELETE api/cards
+// @desc    Delete cards
+// @access  Private
+router.post(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Card.findById(req.params.id);
+  }
+);
+
 module.exports = router;
