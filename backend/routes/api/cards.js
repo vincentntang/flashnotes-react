@@ -83,7 +83,7 @@ router.delete(
               .json({ notauthorized: "User notaa authorized" });
           }
 
-          // Delete
+          // Delete the card
           card.remove().then(() => res.json({ success: true }));
         })
         .catch(err => res.status(404).json({ cardnotfound: "No card found" }));
