@@ -50,10 +50,14 @@ TL-DR; If you have to learn and memorize lots of things, flashnotes saves you ti
 
 ## Installation
 
+Go to `backend` folder, add your `env` keys from `env.sample`
+
 In root folder, type
 
 ```
 npm install
+npm run install-client
+npm run install-server
 npm run dev
 ```
 
