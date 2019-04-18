@@ -48,6 +48,17 @@ Down the road it will use machine learning to fine tune your preferences.
 
 TL-DR; If you have to learn and memorize lots of things, flashnotes saves you time through scientific proven space-reptition algorithm invented by Piotr Wozniack in 1995
 
+## Installation
+
+In root folder, type
+
+```
+npm install
+npm run dev
+```
+
+On development mode, frontend starts on port 3000, backend port 5000
+
 ## Road map
 
 * [ ] Toggle switch for rendering front / back of flash card
@@ -112,19 +123,7 @@ TL-DR; If you have to learn and memorize lots of things, flashnotes saves you ti
 
 See mocked up data sets currently being used under `data` folder. Not entirely secure (need to think about private routes)
 
-`GET /cards` returns all cards
-
-`GET /cards/card:id` return a specific cards content
-
-`GET /decks` returns all decks
-
-`GET /decks/deck:id` returns a specific deck
-
-`POST /cards` generate a new card
-
-`POST /decks` generate a new deck
-
-`GET /user/user:id` Show profile of user
+See the [API.md](/API.md) docs
 
 ## Additional Routing structure and query params
 
