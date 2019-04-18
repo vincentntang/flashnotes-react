@@ -48,6 +48,17 @@ Down the road it will use machine learning to fine tune your preferences.
 
 TL-DR; If you have to learn and memorize lots of things, flashnotes saves you time through scientific proven space-reptition algorithm invented by Piotr Wozniack in 1995
 
+## Installation
+
+In root folder, type
+
+```
+npm install
+npm run dev
+```
+
+On development mode, frontend starts on port 3000, backend port 5000
+
 ## Road map
 
 * [ ] Toggle switch for rendering front / back of flash card
