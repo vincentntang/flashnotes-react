@@ -13,6 +13,9 @@ const DeckStyles = styled.section`
   // flex-wrap: wrap;
   // align-items: center;
   // justify-content: center;
+  a {
+    margin-left: 15px;
+  }
 `;
 
 const DeckBody = styled.div`
@@ -47,8 +50,10 @@ export default class Cards extends Component {
       });
     }
     console.log(this.state.decks);
+
     return (
       <DeckStyles>
+        {this.state.decks.length !== 0 && <Link to="/decks/add">Add Deck</Link>}
         {this.state.decks.length !== 0 && <Link to="/decks/stats">Stats</Link>}
         {deckContent}
       </DeckStyles>

@@ -9,7 +9,10 @@ import EditCardItems from "./EditCardItems";
 const StyledHeader = styled.div`
   display: flex;
   > div {
-    width: 50%;
+    width: calc(50% - 25px);
+  }
+  span {
+    width: 25px;
   }
 `;
 class EditCards extends Component {
@@ -29,6 +32,8 @@ class EditCards extends Component {
         <StyledHeader>
           <div>Question</div>
           <div>Answer</div>
+          <span />
+          <span />
         </StyledHeader>
         {this.state.cards.map(card => {
           return (
