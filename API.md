@@ -73,3 +73,10 @@ This enforces a source of truth on one end only.
 The downside is you can only query in one direction unless you index the db.
 
 For examples following a different pattern, see [hackernews API](https://github.com/HackerNews/API) - specifically the post/comments table
+
+## Routes
+
+where workspace = user
+
+- /workspace/decks/
+- /workspace/notes/
