@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import TextFieldGroup from "../common/TextFieldGroup";
+import axios from "axios";
 
 const StyledLogin = styled.section`
   text-align: center;
@@ -14,6 +15,10 @@ class Login extends Component {
     password: "",
     errors: {}
   };
+  loginUser = e => {};
+  onSubmit = e => {
+    e.preventDefault();
+  };
   onChange = e => {
     this.setState({
       [e.target.name]: [e.target.value]
@@ -26,7 +31,7 @@ class Login extends Component {
         <StyledHeader>
           <h1>Login</h1>
         </StyledHeader>
-        <StyledForm>
+        <StyledForm onSubmit={this.onSubmit}>
           <TextFieldGroup
             placeholder="Email Address"
             name="email"
