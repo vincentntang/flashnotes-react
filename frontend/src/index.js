@@ -4,8 +4,6 @@ import App from "./App";
 // Global Styles
 import "./reset.css";
 import "./global.scss";
-import "./util/FontAwesome.js";
-// import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
