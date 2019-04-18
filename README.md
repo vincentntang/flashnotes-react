@@ -108,46 +108,6 @@ On development mode, frontend starts on port 3000, backend port 5000
   * [ ] Create a design in Figma
   * [ ] Add Formspree (possibly just make a non-react homepage, AJAX call features cost money), formcarry, Airtable, or google firebase
 
-## Things I'm doing from start to finish
-
-* Styled components library add on
-* Card component -> ES6 vs ES5 / constructor functions in backend
-* Conditionally rendering components and styled-components method
-* Figuring out media queries and sass-styles https://jsramblings.com/2018/02/04/styled-components-media-queries.html
-* Defining routes (top level folder)
-* Seperate logic for recursively running commands (put it in a function that is triggered by an event button, so it calls another command)
-* Building an end condition to quizes using state
-* Defining things in as small components as possible
-* Templating all the major routes
-* Folder organization, one folder = one route. For instance `/decks`. Any files within these, are additional forked routes. Such as `decks/:deckid/addCard`.
-* Applying CRUD functionality to `cards` and `decks` required a backend hooked up, unless props are passed down to the other subroutes
-* Route wouldn't load, had `component` misspelled in router as `components` which sent the wrong prop. Was told you could add `$ npm i @types/react-router -D` and `// @ts-check` at the top of `app.js` to catch the error
-
-## Endpoints
-
-See mocked up data sets currently being used under `data` folder. Not entirely secure (need to think about private routes)
-
-See the [API.md](/API.md) docs
-
-## Additional Routing structure and query params
-
-Defining routing is important if a user wants to go directly to a specific page. They mostly reflect the endpoints specified in backend, and tell the user's side.
-
-* /decks
-  * /stats
-  * /:deckID
-    * /edit
-    * /review
-
-## Data Modelling Schema
-
-Data is designed to follow DRY principles (Don't Repeat Yourself). So if say the cards table has a one-to-many relationship to the decks table, the relationship is specified only on one table.
-
-This enforces a source of truth on one end only.
-The downside is you can only query in one direction unless you index the db.
-
-For examples following a different pattern, see [hackernews API](https://github.com/HackerNews/API) - specifically the post/comments table
-
 ## Modelling the Space Repetition Algorithm
 
 Memory based flashcard systems uses an algorithm created by Piotr Wozniack in 1995 called the "Space repetition algorithm".
@@ -167,43 +127,10 @@ http://www.blueraja.com/blog/477/a-better-spaced-repetition-learning-algorithm-s
 * Ankidroid is nice, but really a webapp suffices. (react-native?)
 * Anki web client is just not spaced out correctly (not at optimal read-space length of 60-80 chars per line)
 
-## UI/UX interface on flashcard review
+## Additional Docs
 
-This is how I see proper UI/UX design on flashcard queues.
-It should be based off the principles of speed-reading
+See mocked up data sets currently being used under `data` folder. Not entirely secure (need to think about private routes)
 
-* A user sees a question
-* User clicks `space` or whatever, to show answer.
-* Answer takes the exact spot question was at
-* Question is hidden, user can hover over answer to see question. originally asked as a tooltip popout (position - absolute with extra padding above)
-
-## Additional featuresets for reviewing cards
-
-User can select different options to see what works best for them, for quickly adding cards
-
-* Reveal mode - time-based mode, user sees question and answer slowly reveals itself by slowly showcasing the word
-* Color mode - "Green text = Question" , "Blue Text="Answer".
-
-## User Stories 
-
-* Not signed in
-  * /  -> I can browse cards and add to my collection.
-
-* Signed in
-  * /Decks - I can see my deck
-    * I can add a card quickly here.
-    * I can review my cards quickly
-    * I can search records of my cards quickly
-    * I can get card recommendation from others.
-    * I can set my preferences, to indicate what cards I want to see
-    * I can see what others tag with the same cards
-  * /Decks/Stats
-    * I can see my flash cards reviewed
-    * I can see days I did not review cards
-    * I can see how many cards I reviewed total, in past week, and averages
-  * /Notes - I can see my notes
-    * I see folder pane on left side
-    * I can quickly tag content for later
-    * I can search for notes quickly, either (1) by rich search, or (2) by tags
-    * I can quickly add cards using "Question ? Front : Back" syntax 
-    * I can see a list of quick commands
+- [API.md](/API.md) API / Spec docs
+- [NOTES.md](/NOTES.md) personal notes to self
+- [USERS.md](/USERS.md) user stories
