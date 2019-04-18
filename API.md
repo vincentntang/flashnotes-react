@@ -78,5 +78,18 @@ For examples following a different pattern, see [hackernews API](https://github.
 
 where workspace = user
 
-- /workspace/decks/
-- /workspace/notes/
+- /workspace - Automatically defers to "decks" once in the morning, but "notes" thereafter. User can set what this looks like
+  - /decks - show every deck here
+    - /stats - show stats
+    - /:id - This is when your at the deck, review or edit mode etc
+  - /notes - automatically push to last used :id
+    - /:id - show note
+
+In the decks route, show every deck on that page. Make it look like a deck.
+In each deck, show the following....
+
+- [review]
+- [edit]
+- [...]
+  - Delete items
+  - Trash items
