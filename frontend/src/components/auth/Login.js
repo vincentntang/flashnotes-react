@@ -1,9 +1,9 @@
 import React, { Component } from "react";
+import propTypes from "prop-types";
 import styled from "styled-components";
+import { connect } from "react-redux";
+import { loginUser } from "../../actions/authActions";
 import TextFieldGroup from "../common/TextFieldGroup";
-import axios from "axios";
-import jwt_decode from "jwt-decode";
-import setAuthToken from "../../utils/setAuthToken";
 
 const StyledLogin = styled.section`
   text-align: center;
@@ -26,23 +26,6 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password
     };
-
-    axios
-      .post("http://localhost:5000/api/users/login", user)
-      .then(res => {
-        console.log("I ran");
-        // Save to localStorage
-        const { token } = res.data;
-        // Set token to ls
-        localStorage.setItem("jwtToken", token);
-        // Set token to Auth header
-        setAuthToken(token);
-        // Decode token to get user data
-        const decoded = jwt_decode(token);
-        // Set current user
-        this.setState({ auth: decoded });
-      })
-      .catch(err => console.log(err));
   };
   onChange = e => {
     this.setState({
@@ -80,4 +63,17 @@ class Login extends Component {
   }
 }
 
-export default Login;
+Login.propTypes = {
+  auth: propTypes.object.isRequired,
+  errors: propTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(Login);

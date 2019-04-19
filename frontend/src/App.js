@@ -4,6 +4,9 @@ import React, { Component } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import { Provider } from "react-redux";
+import store from "./store";
+
 // Import Components
 import Landing from "./components/layout/Landing";
 import Navbar from "./components/layout/Navbar";
@@ -37,31 +40,41 @@ const GlobalStyle = createGlobalStyle`
 class App extends Component {
   render() {
     return (
-      <ThemeProvider theme={theme}>
-        <Router>
-          <div className="App">
-            <GlobalStyle />
-            <Navbar />
-            <Route exact path="/" component={Landing} />
-            <div className="container">
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/decks" component={Decks} />
-              <Switch>
-                <Route exact path="/decks/add" component={AddDecks} />
-                <Route exact path="/decks/stats" component={Stats} />
-                <Route exact path="/decks/:handle" component={Deck} />
-              </Switch>
-              <Switch>
-                <Route exact path="/decks/:handle/add" component={AddCards} />
-                <Route exact path="/decks/:handle/edit" component={EditCards} />
-                <Route exact path="/decks/:handle/review" component={Review} />
-              </Switch>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <Router>
+            <div className="App">
+              <GlobalStyle />
+              <Navbar />
+              <Route exact path="/" component={Landing} />
+              <div className="container">
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/decks" component={Decks} />
+                <Switch>
+                  <Route exact path="/decks/add" component={AddDecks} />
+                  <Route exact path="/decks/stats" component={Stats} />
+                  <Route exact path="/decks/:handle" component={Deck} />
+                </Switch>
+                <Switch>
+                  <Route exact path="/decks/:handle/add" component={AddCards} />
+                  <Route
+                    exact
+                    path="/decks/:handle/edit"
+                    component={EditCards}
+                  />
+                  <Route
+                    exact
+                    path="/decks/:handle/review"
+                    component={Review}
+                  />
+                </Switch>
+              </div>
+              <Footer />
             </div>
-            <Footer />
-          </div>
-        </Router>
-      </ThemeProvider>
+          </Router>
+        </ThemeProvider>
+      </Provider>
     );
   }
 }
