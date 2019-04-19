@@ -4,6 +4,7 @@ import jwt_decode from "jwt-decode";
 
 /**
  * Action creators are set here
+ * decoded value
  */
 
 import { GET_ERRORS, SET_CURRENT_USER } from "./types";

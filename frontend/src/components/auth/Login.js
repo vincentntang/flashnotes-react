@@ -15,11 +15,11 @@ class Login extends Component {
   state = {
     email: "",
     password: "",
-    errors: {},
-    auth: {}
+    errors: {}
   };
 
   componentDidMount() {}
+
   onSubmit = e => {
     e.preventDefault();
     const userData = {
@@ -27,6 +27,7 @@ class Login extends Component {
       password: this.state.password
     };
     this.props.loginUser(userData);
+    console.log(this.props);
   };
   onChange = e => {
     this.setState({
@@ -57,6 +58,7 @@ class Login extends Component {
             onChange={this.onChange}
             error={errors.password}
           />
+          {this.props.isAuthenticated && <p>I'm authenticated!</p>}
           <input type="submit" />
         </StyledForm>
       </StyledLogin>
