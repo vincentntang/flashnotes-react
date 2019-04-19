@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import TextFieldGroup from "../common/TextFieldGroup";
 import axios from "axios";
+import jwt_decode from "jwt-decode";
+import setAuthToken from "../../utils/setAuthToken";
 
 const StyledLogin = styled.section`
   text-align: center;
@@ -26,20 +28,21 @@ class Login extends Component {
     };
 
     axios
-      .get("https://sao-api.herokuapp.com/api/submissions?page=1&per_page=12", {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-          // 'Access-Control-Allow-Origin':'*'
-        }
-      })
+      .post("http://localhost:5000/api/users/login", user)
       .then(res => {
-        const submissions = res.data.submissions;
-        this.setState({ submissions: submissions });
+        console.log("I ran");
+        // Save to localStorage
+        const { token } = res.data;
+        // Set token to ls
+        localStorage.setItem("jwtToken", token);
+        // Set token to Auth header
+        setAuthToken(token);
+        // Decode token to get user data
+        const decoded = jwt_decode(token);
+        // Set current user
+        this.setState({ auth: decoded });
       })
-      .catch(function(error) {
-        console.log(error);
-      });
+      .catch(err => console.log(err));
   };
   onChange = e => {
     this.setState({
