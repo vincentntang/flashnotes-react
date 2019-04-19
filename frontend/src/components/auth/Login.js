@@ -13,11 +13,33 @@ class Login extends Component {
   state = {
     email: "",
     password: "",
-    errors: {}
+    errors: {},
+    auth: {}
   };
-  loginUser = e => {};
+
+  componentDidMount() {}
   onSubmit = e => {
     e.preventDefault();
+    const user = {
+      email: this.state.email,
+      password: this.state.password
+    };
+
+    axios
+      .get("https://sao-api.herokuapp.com/api/submissions?page=1&per_page=12", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+          // 'Access-Control-Allow-Origin':'*'
+        }
+      })
+      .then(res => {
+        const submissions = res.data.submissions;
+        this.setState({ submissions: submissions });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   };
   onChange = e => {
     this.setState({
