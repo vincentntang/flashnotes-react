@@ -22,10 +22,11 @@ class Login extends Component {
   componentDidMount() {}
   onSubmit = e => {
     e.preventDefault();
-    const user = {
+    const userData = {
       email: this.state.email,
       password: this.state.password
     };
+    this.props.loginUser(userData);
   };
   onChange = e => {
     this.setState({
