@@ -8,7 +8,7 @@ const StyledRegister = styled.section`
 const StyledHeader = styled.div``;
 const StyledForm = styled.div``;
 
-class Login extends Component {
+class Register extends Component {
   state = {
     name: "",
     email: "",
@@ -68,4 +68,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Register;

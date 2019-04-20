@@ -1,5 +1,5 @@
 {
-  "name": "flashnotes-react-firebase",
+  "name": "flashnotes-react",
   "version": "1.0.0",
   "description": "What is flashnotes?",
   "main": "index.js",
@@ -8,19 +8,21 @@
     "client": "npm start --prefix frontend",
     "server": "npm run server --prefix backend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "install": "concurrently \"npm install --prefix frontend\" \"npm install --prefix backend\""
+    "install-client": "cd frontend && npm install",
+    "install-server": "cd backend && npm install"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vincentntang/flashnotes-react-firebase.git"
+    "url": "git+https://github.com/vincentntang/flashnotes-react.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vincentntang/flashnotes-react-firebase/issues"
+    "url": "https://github.com/vincentntang/flashnotes-react/issues"
   },
-  "homepage": "https://github.com/vincentntang/flashnotes-react-firebase#readme",
+  "homepage": "https://github.com/vincentntang/flashnotes-react#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "concurrently": "^4.1.0"
   }
 }
