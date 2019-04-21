@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { registerUser } from "../../actions/authActions";
 import TextFieldGroup from "../common/TextFieldGroup";
 
 const StyledRegister = styled.section`
   text-align: center;
 `;
 const StyledHeader = styled.div``;
-const StyledForm = styled.div``;
+const StyledForm = styled.form``;
 
 class Register extends Component {
   state = {
@@ -15,6 +19,26 @@ class Register extends Component {
     password: "",
     password2: "",
     errors: {}
+  };
+  componentDidMount() {
+    if (this.props.isAuthenticated) {
+      this.props.history.push("/decks");
+    }
+  }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+  onSubmit = e => {
+    console.log("I ran");
+    e.preventDefault();
+    const userData = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password
+    };
+    this.props.registerUser(userData, this.props.history); // pass history to actions
   };
   onChange = e => {
     this.setState({
@@ -28,7 +52,7 @@ class Register extends Component {
         <StyledHeader>
           <h1>Register</h1>
         </StyledHeader>
-        <StyledForm>
+        <StyledForm onSubmit={this.onSubmit}>
           <TextFieldGroup
             placeholder="Name"
             name="name"
@@ -68,4 +92,14 @@ class Register extends Component {
   }
 }
 
-export default Register;
+Register.propTypes = {
+  auth: PropTypes.object.isRequired,
+  error: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => {};
+
+export default connect(
+  mapStateToProps,
+  { registerUser }
+)(withRouter(Register)); // see auth actions, you pass history to the reducer

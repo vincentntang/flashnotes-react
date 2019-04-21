@@ -12,3 +12,5 @@
 * Folder organization, one folder = one route. For instance `/decks`. Any files within these, are additional forked routes. Such as `decks/:deckid/addCard`.
 * Applying CRUD functionality to `cards` and `decks` required a backend hooked up, unless props are passed down to the other subroutes
 * Route wouldn't load, had `component` misspelled in router as `components` which sent the wrong prop. Was told you could add `$ npm i @types/react-router -D` and `// @ts-check` at the top of `app.js` to catch the error
+* Initial state populated through redux, but I couldn't understand where initial state started anywhere. It was from reducers firing once a store is created
+* On my windows PC, some strange reason `proxy` works on package.json in `client` folder, but my macOS doesn't work

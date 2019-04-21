@@ -13,6 +13,7 @@
   * [x] Add Nav Links and styling
   * [x] Change routing to `/decks/:id/review`, and `decks/:id/edit`
   * [ ] Refactor Edit/Add card to `/cards/edit/?deckid=deckid` params because this could be done on `decks` or `deck` route. Use `history` to go back somehow, as user might modify query parameters for search (possibly cache this?)
+  * [ ] Dashboard showcasing the data visualization of cards / notes written.
 
 * [ ] Quiz functionality
   * [ ] Cards CRUD functionality
@@ -42,3 +43,4 @@
   * [ ] Make a nice frontend landing page
   * [ ] Create a design in Figma
   * [ ] Add Formspree (possibly just make a non-react homepage, AJAX call features cost money), formcarry, Airtable, or google firebase
+
