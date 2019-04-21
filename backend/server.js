@@ -35,6 +35,6 @@ app.use("/api/cards", cards);
 app.use("/api/decks", decks);
 app.use("/api/notes", notes);
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5005;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
