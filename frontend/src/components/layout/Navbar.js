@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 const NavbarStyles = styled.nav`
   background-color: ${props => props.theme.grey}
@@ -42,8 +43,10 @@ const NavbarStyles = styled.nav`
   
 `;
 
-export default class Navbar extends Component {
+class Navbar extends Component {
   render() {
+    const { isAuthenticated, user } = this.props.auth;
+
     return (
       <NavbarStyles>
         <div className="container">
@@ -51,9 +54,12 @@ export default class Navbar extends Component {
             Flash Notes
           </Link>
           <ul>
-            <li>
-              <Link to="/decks">Decks</Link>
-            </li>
+            {isAuthenticated && (
+              <li>
+                <Link to="/decks">Decks</Link>
+              </li>
+            )}
+
             <li>
               <Link to="/register">Register</Link>
             </li>
@@ -66,3 +72,9 @@ export default class Navbar extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps)(Navbar);

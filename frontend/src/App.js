@@ -10,6 +10,8 @@ import { setCurrentUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
+import PrivateRoute from "./components/common/PrivateRoute";
+
 // Import Components
 import Landing from "./components/layout/Landing";
 import Navbar from "./components/layout/Navbar";
