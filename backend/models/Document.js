@@ -6,7 +6,6 @@ const DocumentSchema = new Schema(
   {
     title: {
       type: String,
-      required: true
     },
     pinned: {
       type: Boolean,
