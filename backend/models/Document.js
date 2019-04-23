@@ -5,7 +5,12 @@ const Schema = mongoose.Schema;
 const DocumentSchema = new Schema(
   {
     title: {
-      type: String
+      type: String,
+      required: true
+    },
+    pinned: {
+      type: Boolean,
+      default: false
     },
     user: {
       type: Schema.Types.ObjectId,
@@ -17,4 +22,4 @@ const DocumentSchema = new Schema(
   }
 );
 
-module.exports = Note = mongoose.model("documents", DocumentSchema);
+module.exports = Document = mongoose.model("documents", DocumentSchema);
