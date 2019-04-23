@@ -2,21 +2,18 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Schema
-const NoteSchema = new Schema(
+const DocumentSchema = new Schema(
   {
     title: {
-      type: String
+      type: String,
     },
-    text: {
-      type: String
+    pinned: {
+      type: Boolean,
+      default: false
     },
     user: {
       type: Schema.Types.ObjectId,
       ref: "users"
-    },
-    document: {
-      type: Schema.Types.ObjectId,
-      ref: "documents"
     }
   },
   {
@@ -24,4 +21,4 @@ const NoteSchema = new Schema(
   }
 );
 
-module.exports = Note = mongoose.model("notes", NoteSchema);
+module.exports = Document = mongoose.model("documents", DocumentSchema);

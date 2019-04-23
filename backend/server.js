@@ -7,6 +7,7 @@ const users = require("./routes/api/users");
 const cards = require("./routes/api/cards");
 const decks = require("./routes/api/decks");
 const notes = require("./routes/api/notes");
+const documents = require("./routes/api/documents");
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.use("/api/users", users);
 app.use("/api/cards", cards);
 app.use("/api/decks", decks);
 app.use("/api/notes", notes);
+app.use("/api/documents", documents);
 
 const port = process.env.PORT || 5000;
 
